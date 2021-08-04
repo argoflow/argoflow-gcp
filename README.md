@@ -25,6 +25,7 @@ Overview of the steps:
 - modify the kustomizations for your purpose
 - run `./setup_repo.sh <your_repo_fork_url>`
 - commit and push your changes
+- install ArgoCD in your Kubernetes cluster
 - run `kubectl apply -f kubeflow.yaml`
 
 ## Folder setup
