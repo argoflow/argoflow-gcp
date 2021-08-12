@@ -3,30 +3,30 @@ kind: Kustomization
 
 resources:
 # non-kubeflow
-# - argocd-applications/metallb.yaml
-- argocd-applications/argocd.yaml
-- argocd-applications/kubeflow-roles-namespaces.yaml
-- argocd-applications/cert-manager.yaml
-- argocd-applications/istio.yaml
-- argocd-applications/oidc-authservice.yaml
-- argocd-applications/dex-istio.yaml
-- argocd-applications/knative.yaml
-- argocd-applications/pipelines.yaml
-- argocd-applications/kfserving.yaml
-- argocd-applications/katib.yaml
-- argocd-applications/central-dashboard.yaml
-- argocd-applications/pod-defaults.yaml
-- argocd-applications/jupyter-web-app.yaml
-- argocd-applications/notebook-controller.yaml
-- argocd-applications/profile-controller_access-management.yaml
-- argocd-applications/tensorboard-controller.yaml
-- argocd-applications/tensorboards-web-app.yaml
-- argocd-applications/volumes-web-app.yaml
-- argocd-applications/tensorflow-operator.yaml
-- argocd-applications/pytorch-operator.yaml
-- argocd-applications/mpi-operator.yaml
-- argocd-applications/mxnet-operator.yaml
-- argocd-applications/xgboost-operator.yaml
-- argocd-applications/user-namespace.yaml
-# - argocd-applications/experimental-pvcviewer-controller.yaml
-# - argocd-applications/experimental-volumes-web-app.yaml
+# - distribution/argocd-applications/metallb.yaml
+- distribution/argocd-applications/argocd.yaml
+- distribution/argocd-applications/kubeflow-roles-namespaces.yaml
+- distribution/argocd-applications/cert-manager.yaml
+- distribution/argocd-applications/istio.yaml
+- distribution/argocd-applications/oidc-authservice.yaml
+- distribution/argocd-applications/dex-istio.yaml
+- distribution/argocd-applications/knative.yaml
+- distribution/argocd-applications/pipelines.yaml
+- distribution/argocd-applications/kfserving.yaml
+- distribution/argocd-applications/katib.yaml
+- distribution/argocd-applications/central-dashboard.yaml
+- distribution/argocd-applications/pod-defaults.yaml
+- distribution/argocd-applications/jupyter-web-app.yaml
+- distribution/argocd-applications/notebook-controller.yaml
+- distribution/argocd-applications/profile-controller_access-management.yaml
+- distribution/argocd-applications/tensorboard-controller.yaml
+- distribution/argocd-applications/tensorboards-web-app.yaml
+- distribution/argocd-applications/volumes-web-app.yaml
+- distribution/argocd-applications/tensorflow-operator.yaml
+- distribution/argocd-applications/pytorch-operator.yaml
+- distribution/argocd-applications/mpi-operator.yaml
+- distribution/argocd-applications/mxnet-operator.yaml
+- distribution/argocd-applications/xgboost-operator.yaml
+- distribution/argocd-applications/user-namespace.yaml
+# - distribution/argocd-applications/experimental-pvcviewer-controller.yaml
+# - distribution/argocd-applications/experimental-volumes-web-app.yaml
