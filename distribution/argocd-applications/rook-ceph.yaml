@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/argoflow/argoflow
     targetRevision: HEAD
-    path: rook-ceph
+    path: distribution/rook-ceph
     kustomize:
       version: v4.0.5
   destination:
