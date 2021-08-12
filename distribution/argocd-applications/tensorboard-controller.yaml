@@ -6,8 +6,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/argoflow/argoflow
-    targetRevision: HEAD
+    repoURL: https://github.com/haoxins/argoflow-gcp
+    targetRevision: master
     path: distribution/kubeflow/notebooks/tensorboard-controller
   destination:
     server: https://kubernetes.default.svc
