@@ -26,7 +26,7 @@ Overview of the steps:
 - run `./setup_repo.sh <your_repo_fork_url>`
 - commit and push your changes
 - install ArgoCD in your Kubernetes cluster
-- `cd distribution` and run `kubectl apply -f kubeflow.yaml`
+- run `kubectl apply -f distribution/kubeflow.yaml`
 
 ## Folder setup under distribution directory
 
@@ -74,7 +74,7 @@ from the URI.
 1. Next, to install ArgoCD execute the following command:
 
     ```bash
-    kustomize build argocd/ | kubectl apply -f -
+    kustomize build distribution/argocd/ | kubectl apply -f -
     ```
 
 2. Install the ArgoCD CLI tool from [here](https://argoproj.github.io/argo-cd/cli_installation/)
@@ -207,12 +207,12 @@ you can either choose to deploy componenet individually or
 deploy them all at once.
 For example, to deploy a single component you can run:
 
-`kubectl apply -f argocd-applications/kubeflow-roles-namespaces.yaml`
+`kubectl apply -f distribution/argocd-applications/kubeflow-roles-namespaces.yaml`
 
 To deploy everything specified in the root [kustomization.yaml](./distribution/kustomization.yaml),
  execute:
 
- `kubectl apply -f kubeflow.yaml`
+ `kubectl apply -f distribution/kubeflow.yaml`
 
 After this, you should start seeing applications being deployed in
 the ArgoCD UI and what the resources each application create.
