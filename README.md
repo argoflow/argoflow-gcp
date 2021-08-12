@@ -55,8 +55,8 @@ Overview of the steps:
 
 ### Root files
 
-- [kustomization.yaml](./distribution/kustomization.yaml): Kustomization file that references the ArgoCD application files in [argocd-applications](./argocd-applications)
-- [kubeflow.yaml](./distribution/kubeflow.yaml): ArgoCD application that deploys the ArgoCD applications referenced in [kustomization.yaml](./kustomization.yaml)
+- [kustomization.yaml](./distribution/kustomization.yaml): Kustomization file that references the ArgoCD application files in [argocd-applications](./distribution/argocd-applications)
+- [kubeflow.yaml](./distribution/kubeflow.yaml): ArgoCD application that deploys the ArgoCD applications referenced in [kustomization.yaml](./distribution/kustomization.yaml)
 
 ## Prerequisite
 
