@@ -10,7 +10,7 @@ spec:
     targetRevision: HEAD
     path: distribution/kubeflow/operators/pytorch
     kustomize:
-      version: v4.0.5
+      # version: v4.0.5
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:
