@@ -9,7 +9,6 @@ spec:
     repoURL: https://github.com/argoflow/argoflow
     targetRevision: HEAD
     path: distribution/kubeflow/notebooks/tensorboards-web-app
-    kustomize:
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:

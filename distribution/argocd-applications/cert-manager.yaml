@@ -9,7 +9,6 @@ spec:
     repoURL: https://github.com/argoflow/argoflow
     targetRevision: HEAD
     path: distribution/cert-manager
-    kustomize:
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:
