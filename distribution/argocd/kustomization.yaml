@@ -4,7 +4,7 @@ namespace: argocd
 
 resources:
 - namespace.yaml
-- https://github.com/argoproj/argo-cd/manifests/ha/cluster-install?ref=d6bb86946845d5a0fc8c13dc5ede39eecf0f47fb # tag=v2.1.0-rc3
+- https://github.com/argoproj/argo-cd/manifests/ha/cluster-install?ref=5b5182f83af1e53c9303aa8dc1e84537d9d1441b # tag=v2.1.0
 
 patchesStrategicMerge:
 - configmap-patch.yaml
@@ -16,8 +16,8 @@ images:
   # digest: sha256:63fc6ee14bcf1868ebfba90885aec76597e0f27bc8e89d1fd238b1f2ee3dea6e
 - name: quay.io/argoproj/argocd
   newName: quay.io/argoproj/argocd
-  newTag: v2.1.0-rc3
-  # digest: sha256:616cfb7dcd5b9e30a0b13982ca3cd43b8e3b3803f455a3f4265ba39030b21f2e
+  newTag: v2.1.0
+  # digest: sha256:544f0cd334c7418526e56497308c5d10b4f942237929004c3ac2360bb2a337a1
 - name: haproxy
   newName: haproxy
   newTag: 2.4.2-alpine
