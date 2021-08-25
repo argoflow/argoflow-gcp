@@ -14,7 +14,7 @@ spec:
       name: example-issuer-account-key
     # Add a single challenge solver, HTTP01 using nginx
     solvers:
-    - dns01: {}
+      - dns01: {}
 ---
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
@@ -32,4 +32,4 @@ spec:
       name: example-issuer-account-key
     # Add a single challenge solver, HTTP01 using nginx
     solvers:
-    - dns01: {}
+      - dns01: {}
