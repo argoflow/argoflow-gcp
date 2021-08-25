@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/argoflow/argoflow
     targetRevision: HEAD
-    path: distribution/kubeflow/notebooks/central-dashboard
+    path: distribution/kubeflow/central-dashboard
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:

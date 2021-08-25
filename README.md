@@ -41,7 +41,7 @@ Overview of the steps:
   - [katib](./distribution/kubeflow/katib): Kustomize files for installing Katib
   - [kfserving](./distribution/kubeflow/kfserving): Kustomize files for installing KFServing
     - [knative](./distribution/kubeflow/knative): Kustomize files for installing KNative
-  - [central-dashboard](./distribution/kubeflow/notebooks/central-dashboard): Kustomize files for installing the Central Dashboard
+  - [central-dashboard](./distribution/kubeflow/central-dashboard): Kustomize files for installing the Central Dashboard
   - [jupyter-web-app](./distribution/kubeflow/notebooks/jupyter-web-app): Kustomize files for installing the Jupyter Web App
     - [notebook-controller](./distribution/kubeflow/notebooks/notebook-controller): Kustomize files for installing the Notebook Controller
   - [pod-defaults](./distribution/kubeflow/notebooks/pod-defaults): Kustomize files for installing Pod Defaults (a.k.a. admission webhook)
