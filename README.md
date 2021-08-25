@@ -23,7 +23,7 @@ Overview of the steps:
 
 - fork this repo
 - modify the kustomizations for your purpose
-- run `./setup_repo.sh <your_repo_fork_url>`
+- run `./setup_repo.sh <your_repo_fork_url> <your_branch_or_release>`
 - commit and push your changes
 - install ArgoCD in your Kubernetes cluster
 - run `kubectl apply -f distribution/kubeflow.yaml`
@@ -57,11 +57,6 @@ Overview of the steps:
 
 - [kustomization.yaml](./distribution/kustomization.yaml): Kustomization file that references the ArgoCD application files in [argocd-applications](./distribution/argocd-applications)
 - [kubeflow.yaml](./distribution/kubeflow.yaml): ArgoCD application that deploys the ArgoCD applications referenced in [kustomization.yaml](./distribution/kustomization.yaml)
-
-## Prerequisite
-
-- kubectl (latest)
-- kustomize 4.0.5
 
 ## Installing ArgoCD
 
@@ -180,15 +175,7 @@ file.
 
 To simplify the process of telling ArgoCD to use your fork
 of this repo, a script is provided that updates the
-`spec.source.repoURL` of all the ArgoCD application specs.
-Simply run:
-
-```bash
-./setup_repo.sh <your_repo_fork_url>
-```
-
-If you need to target a specific branch or release on your for you can add a second
-argument to the script to specify it.
+`spec.source.repoURL` and `spec.source.targetRevision` of all the ArgoCD application specs.
 
 ```bash
 ./setup_repo.sh <your_repo_fork_url> <your_branch_or_release>
