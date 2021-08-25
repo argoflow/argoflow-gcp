@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/argoflow/argoflow
     targetRevision: HEAD
-    path: distribution/kubeflow/common/user-namespace
+    path: distribution/kubeflow/user-namespace
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:

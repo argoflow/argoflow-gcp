@@ -33,11 +33,11 @@ Overview of the steps:
 - [argocd](./distribution/argocd): Kustomize files for ArgoCD
 - [argocd-applications](./distribution/argocd-applications): ArgoCD application for each Kubeflow component
 - [cert-manager](./distribution/cert-manager): Kustomize files for installing cert-manager v1.2
+- [dex-istio](./distribution/dex-istio): Kustomize files for Dex auth installation
+- [oidc-authservice](./distribution/oidc-authservice): Kustomize files for OIDC authservice
 - [kubeflow](./distribution/kubeflow): Kustomize files for installing Kubeflow componenets
-  - [common/dex-istio](./distribution/kubeflow/common/dex-istio): Kustomize files for Dex auth installation
-  - [common/oidc-authservice](./distribution/kubeflow/common/oidc-authservice): Kustomize files for OIDC authservice
-  - [roles-namespaces](./distribution/kubeflow/common/roles-namespaces): Kustomize files for Kubeflow namespace and ClusterRoles
-  - [user-namespace](./distribution/kubeflow/common/user-namespace): Kustomize manifest to create the profile and namespace for the default Kubeflow user
+  - [roles-namespaces](./distribution/kubeflow/roles-namespaces): Kustomize files for Kubeflow namespace and ClusterRoles
+  - [user-namespace](./distribution/kubeflow/user-namespace): Kustomize manifest to create the profile and namespace for the default Kubeflow user
   - [katib](./distribution/kubeflow/katib): Kustomize files for installing Katib
   - [kfserving](./distribution/kubeflow/kfserving): Kustomize files for installing KFServing
     - [knative](./distribution/kubeflow/knative): Kustomize files for installing KNative
@@ -111,9 +111,9 @@ to make.
 The default `username`, `password` and `namespace` of this deployment are:
 `user`, `12341234` and `kubeflow-user` respectively.
 To change these, edit the `user` and `profile-name`
-(the namespace for this user) in [params.env](./distribution/kubeflow/common/user-namespace/params.env).
+(the namespace for this user) in [params.env](./distribution/kubeflow/user-namespace/params.env).
 
-Next, in [configmap-path.yaml](./distribution/kubeflow/common/dex-istio/configmap-patch.yaml)
+Next, in [configmap-path.yaml](./distribution/dex-istio/configmap-patch.yaml)
 under `staticPasswords`, change the `email`, the `hash` and the `username`
 for your used account.
 
@@ -133,7 +133,7 @@ python3 -c 'from passlib.hash import bcrypt; import getpass; print(bcrypt.using(
 ```
 
 To add new static users to Dex, you can add entries to the
-[configmap-path.yaml](./distribution/kubeflow/common/dex-istio/configmap-patch.yaml)
+[configmap-path.yaml](./distribution/dex-istio/configmap-patch.yaml)
 and set a password as described above.If you have already deployed Kubeflow
 commit these changes to your fork so Argo CD detects them. You will also
 need to kill the Dex pod or restart the dex deployment. This can be
@@ -152,7 +152,7 @@ Edit the [configmap.yaml](./distribution/metallb/configmap.yaml) and set
 a range of IP addresses MetalLB can use under `data.config.address-pools.addresses`.
 This must be in the same subnet as your cluster nodes.
 
-If you do not wish to use a LoadBalancer, change the `spec.type` in [gateway-service.yaml](./distribution/kubeflow/common/istio/gateway-service.yaml)
+If you do not wish to use a LoadBalancer, change the `spec.type` in [gateway-service.yaml](./distribution/istio/gateway-service.yaml)
 to `NodePort`.
 
 To provide HTTPS out-of-the-box, the `kubeflow-self-signing-issuer` used by internal
@@ -160,7 +160,7 @@ Kubeflow applications is setup to provide a certificate for the Istio Ingress
 Gateway.
 
 To use a different certificate for the Ingress Gateway, change
-the `spec.issuerRef.name` to the cert-manager ClusterIssuer you would like to use in [ingress-certificate.yaml](./distribution/kubeflow/common/istio/ingress-certificate.yaml)
+the `spec.issuerRef.name` to the cert-manager ClusterIssuer you would like to use in [ingress-certificate.yaml](./distribution/istio/ingress-certificate.yaml)
 and set the `spec.commonName` and `spec.dnsNames[0]` to your Kubeflow domain.
 
 If you would like to use LetsEncrypt, a ClusterIssuer template if provided in
