@@ -3,26 +3,26 @@ kind: Kustomization
 namespace: argocd
 
 resources:
-- namespace.yaml
-- https://github.com/argoproj/argo-cd/manifests/ha/cluster-install?ref=5b5182f83af1e53c9303aa8dc1e84537d9d1441b # tag=v2.1.0
+  - namespace.yaml
+  - https://github.com/argoproj/argo-cd/manifests/ha/cluster-install?ref=5b5182f83af1e53c9303aa8dc1e84537d9d1441b # tag=v2.1.0
 
 patchesStrategicMerge:
-- configmap-patch.yaml
+  - configmap-patch.yaml
 
 images:
-- name: ghcr.io/dexidp/dex
-  newName: ghcr.io/dexidp/dex
-  newTag: v2.30.0
-  # digest: sha256:63fc6ee14bcf1868ebfba90885aec76597e0f27bc8e89d1fd238b1f2ee3dea6e
-- name: quay.io/argoproj/argocd
-  newName: quay.io/argoproj/argocd
-  newTag: v2.1.0
-  # digest: sha256:544f0cd334c7418526e56497308c5d10b4f942237929004c3ac2360bb2a337a1
-- name: haproxy
-  newName: haproxy
-  newTag: 2.4.2-alpine
-  # digest: sha256:01eccc111d352dd77175b078d62078a4ce2f31256047980da4ebda8fa87a5ce7
-- name: redis
-  newName: redis
-  newTag: 6.2.5-alpine
-  # digest: sha256:fc856014691d52258a64ab4ef05bf835ce416eb552576264d98309ec92949aba
+  - name: ghcr.io/dexidp/dex
+    newName: ghcr.io/dexidp/dex
+    newTag: v2.30.0
+    # digest: sha256:63fc6ee14bcf1868ebfba90885aec76597e0f27bc8e89d1fd238b1f2ee3dea6e
+  - name: quay.io/argoproj/argocd
+    newName: quay.io/argoproj/argocd
+    newTag: v2.1.0
+    # digest: sha256:544f0cd334c7418526e56497308c5d10b4f942237929004c3ac2360bb2a337a1
+  - name: haproxy
+    newName: haproxy
+    newTag: 2.4.2-alpine
+    # digest: sha256:01eccc111d352dd77175b078d62078a4ce2f31256047980da4ebda8fa87a5ce7
+  - name: redis
+    newName: redis
+    newTag: 6.2.5-alpine
+    # digest: sha256:fc856014691d52258a64ab4ef05bf835ce416eb552576264d98309ec92949aba

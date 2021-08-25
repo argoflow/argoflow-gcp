@@ -1,5 +1,5 @@
 varReference:
-- path: spec/owner/name
-  kind: Profile
-- path: metadata/name
-  kind: Profile
+  - path: spec/owner/name
+    kind: Profile
+  - path: metadata/name
+    kind: Profile

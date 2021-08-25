@@ -7,7 +7,7 @@ spec:
   template:
     spec:
       containers:
-      - name: centraldashboard
-        env:
-        - name: REGISTRATION_FLOW
-          value: "true"
+        - name: centraldashboard
+          env:
+            - name: REGISTRATION_FLOW
+              value: "true"
