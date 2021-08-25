@@ -17,7 +17,7 @@ patchesStrategicMerge:
 images:
   - name: docker.io/istio/proxyv2
     newName: docker.io/istio/proxyv2
-    newTag: 1.9.8
+    newTag: 1.11.1
     # digest: sha256:28ac85b69bc58c181f2d717ed9daea370161bca9c596e215f9146384c47e29c5
   - name: docker.io/istio/pilot
     newName: docker.io/istio/pilot
