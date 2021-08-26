@@ -6,8 +6,6 @@ data:
   spawner_ui_config.yaml: |
     # Configuration file for the Jupyter UI.
     #
-    # Configuration file for the Jupyter UI.
-    #
     # Each Jupyter UI option is configured by two keys: 'value' and 'readOnly'
     # - The 'value' key contains the default value
     # - The 'readOnly' key determines if the option will be available to users
