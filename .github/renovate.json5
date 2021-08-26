@@ -33,8 +33,14 @@
     },
     {
       "description": "Group Kubeflow Pipelines update",
-      "matchPackagePatterns": ["^(kubeflow|gcr.io)\/(ml-|tfx-oss-public\/ml_metadata_store_server)?(pipeline)?.*"],
+      "matchPackagePatterns": ["^(kubeflow|gcr.io)\/(ml-|tfx-oss-public\/ml_metadata_store_server).?(pipeline)?.*"],
       "groupName": "kubeflow-pipelines",
+      "additionalBranchPrefix": ""
+    },
+    {
+      "description": "Group KNative",
+      "matchPackagePatterns": ["^gcr.io\/knative.*$"],
+      "groupName": "knative",
       "additionalBranchPrefix": ""
     },
     //{
@@ -64,6 +70,14 @@
   "kustomize": {
     "enabled": true,
   },
+  // Enable scanning of Kubernetes YAML
+  "kubernetes": {
+    "fileMatch": ["\\.yaml$"]
+  },
+  // Update Argo CD application specs
+  "argocd": {
+      "fileMatch": ["(argocd-applications|oidc-auth)/.+\\.yaml$"]
+  },
   "regexManagers": [
     {
       "fileMatch": ["(^|/)kustomization.yaml$"],
@@ -78,6 +92,14 @@
           "- https:\/\/github\.com\/(?<depName>[^\/]+?\/[^\/]*?)\/releases\/download\/(?<currentValue>.*)\/.*.yaml"
         ],
       "datasourceTemplate": "github-tags"
+    },
+    // Update Istio CR and operator
+    {
+      "fileMatch": ["(^|/)istio-(spec|operator).yaml$"],
+      "matchStrings": [
+          "(tag:|value:) (?<currentValue>.*) # (?<depName>.*)"
+        ],
+      "datasourceTemplate": "docker"
     }
   ]
 }
