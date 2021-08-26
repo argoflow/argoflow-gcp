@@ -23,23 +23,25 @@ data:
     spawnerFormDefaults:
       image:
         # The container Image for the user's Jupyter Notebook
-        value: public.ecr.aws/j1r0q0g6/notebooks/notebook-servers/jupyter-scipy:v1.4-rc.0
+        value: kubeflownotebooks/jupyter-scipy:v0.3.78
         # The list of available standard container Images
         options:
-        - public.ecr.aws/j1r0q0g6/notebooks/notebook-servers/jupyter-scipy:v1.4-rc.0
-        - public.ecr.aws/j1r0q0g6/notebooks/notebook-servers/jupyter-pytorch-full:v1.4-rc.0
-        - public.ecr.aws/j1r0q0g6/notebooks/notebook-servers/jupyter-pytorch-cuda-full:v1.4-rc.0
-        - public.ecr.aws/j1r0q0g6/notebooks/notebook-servers/jupyter-tensorflow-full:v1.4-rc.0
-        - public.ecr.aws/j1r0q0g6/notebooks/notebook-servers/jupyter-tensorflow-cuda-full:v1.4-rc.0
+          - kubeflownotebooks/jupyter-scipy:v0.3.78
+          - kubeflownotebooks/jupyter-go:v0.3.75
+          - kubeflownotebooks/jupyter-elixir:v0.3.75
+          - kubeflownotebooks/jupyter-pytorch-full:v0.3.78
+          - kubeflownotebooks/jupyter-pytorch-full-cuda:v0.3.78
+          - kubeflownotebooks/jupyter-tensorflow-full:v0.3.78
+          - kubeflownotebooks/jupyter-tensorflow-full-cuda:v0.3.78
       imageGroupOne:
         # The container Image for the user's Group One Server
         # The annotation `notebooks.kubeflow.org/http-rewrite-uri: /`
         # is applied to notebook in this group, configuring
         # the Istio rewrite for containers that host their web UI at `/`
-        value: public.ecr.aws/j1r0q0g6/notebooks/notebook-servers/codeserver-python:v1.4-rc.0
+        value: kubeflownotebooks/codeserver-python:v0.3.78
         # The list of available standard container Images
         options:
-        - public.ecr.aws/j1r0q0g6/notebooks/notebook-servers/codeserver-python:v1.4-rc.0
+          - kubeflownotebooks/codeserver-python:v0.3.78
       imageGroupTwo:
         # The container Image for the user's Group Two Server
         # The annotation `notebooks.kubeflow.org/http-rewrite-uri: /`
@@ -48,13 +50,10 @@ data:
         # The annotation `notebooks.kubeflow.org/http-headers-request-set`
         # is applied to notebook in this group, configuring Istio
         # to add the `X-RStudio-Root-Path` header to requests
-        value: public.ecr.aws/j1r0q0g6/notebooks/notebook-servers/rstudio-tidyverse:v1.4-rc.0
+        value: kubeflownotebooks/rstudio-tidyverse:v0.3.64
         # The list of available standard container Images
         options:
-        - public.ecr.aws/j1r0q0g6/notebooks/notebook-servers/rstudio-tidyverse:v1.4-rc.0
-      # If true, hide registry and/or tag name in the image selection dropdown
-      hideRegistry: true
-      hideTag: false
+          - kubeflownotebooks/rstudio-tidyverse:v0.3.64
       allowCustomImage: true
       # If true, users can input custom images
       # If false, users can only select from the images in this config
@@ -154,10 +153,10 @@ data:
           num: "none"
           # Determines what the UI will show and send to the backend
           vendors:
-          - limitsKey: "nvidia.com/gpu"
-            uiName: "NVIDIA"
-          - limitsKey: "amd.com/gpu"
-            uiName: "AMD"
+            - limitsKey: "nvidia.com/gpu"
+              uiName: "NVIDIA"
+            - limitsKey: "amd.com/gpu"
+              uiName: "AMD"
           # Values: "" or a `limits-key` from the vendors list
           vendor: ""
         readOnly: false
@@ -218,4 +217,4 @@ data:
         #   - add-gcp-secret
         #   - default-editor
         value: []
-        readOnly: false
+    readOnly: false
