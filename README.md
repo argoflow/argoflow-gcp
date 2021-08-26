@@ -51,7 +51,6 @@ Overview of the steps:
   - [volumes-web-app](./distribution/kubeflow/notebooks/volumes-web-app): Kustomize files for installing the Volumes Web App
   - [operators](./distribution/kubeflow/operators): Kustomize files for installing the various operators
   - [pipelines](./distribution/kubeflow/pipelines): Kustomize files for installing Kubeflow Pipelines
-- [metallb](./distribution/metallb): Kustomize files for installing MetalLB
 
 ### Root files
 
@@ -141,11 +140,7 @@ kubectl rollout restart deployment dex -n auth
 ### Ingress and Certificate
 
 By default the Istio Ingress Gateway is setup to use a LoadBalancer
-and to redirect HTTP traffic to HTTPS. Manifests for MetalLB are provided
-to make it easier for users to use a LoadBalancer Service.
-Edit the [configmap.yaml](./distribution/metallb/configmap.yaml) and set
-a range of IP addresses MetalLB can use under `data.config.address-pools.addresses`.
-This must be in the same subnet as your cluster nodes.
+and to redirect HTTP traffic to HTTPS.
 
 If you do not wish to use a LoadBalancer, change the `spec.type` in [gateway-service.yaml](./distribution/istio/gateway-service.yaml)
 to `NodePort`.
