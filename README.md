@@ -28,29 +28,6 @@ Overview of the steps:
 - install ArgoCD in your Kubernetes cluster
 - run `kubectl apply -f distribution/kubeflow.yaml`
 
-## Folder setup under distribution directory
-
-- [argocd](./distribution/argocd): Kustomize files for ArgoCD
-- [argocd-applications](./distribution/argocd-applications): ArgoCD application for each Kubeflow component
-- [cert-manager](./distribution/cert-manager): Kustomize files for installing cert-manager v1.2
-- [dex-istio](./distribution/dex-istio): Kustomize files for Dex auth installation
-- [oidc-authservice](./distribution/oidc-authservice): Kustomize files for OIDC authservice
-- [kubeflow](./distribution/kubeflow): Kustomize files for installing Kubeflow componenets
-  - [roles-namespaces](./distribution/kubeflow/roles-namespaces): Kustomize files for Kubeflow namespace and ClusterRoles
-  - [user-namespace](./distribution/kubeflow/user-namespace): Kustomize manifest to create the profile and namespace for the default Kubeflow user
-  - [katib](./distribution/kubeflow/katib): Kustomize files for installing Katib
-  - [kfserving](./distribution/kubeflow/kfserving): Kustomize files for installing KFServing
-    - [knative](./distribution/kubeflow/knative): Kustomize files for installing KNative
-  - [central-dashboard](./distribution/kubeflow/central-dashboard): Kustomize files for installing the Central Dashboard
-  - [jupyter-web-app](./distribution/kubeflow/notebooks/jupyter-web-app): Kustomize files for installing the Jupyter Web App
-    - [notebook-controller](./distribution/kubeflow/notebooks/notebook-controller): Kustomize files for installing the Notebook Controller
-  - [pod-defaults](./distribution/kubeflow/notebooks/pod-defaults): Kustomize files for installing Pod Defaults (a.k.a. admission webhook)
-  - [profile-controller_access-management](./distribution/kubeflow/notebooks/profile-controller_access-management): Kustomize files for installing the Profile Controller and Access Management
-  - [tensorboards-web-app](./distribution/kubeflow/notebooks/tensorboards-web-app): Kustomize files for installing the Tensorboards Web App
-    - [tensorboard-controller](./distribution/kubeflow/notebooks/tensorboard-controller): Kustomize files for installing the Tensorboard Controller
-  - [volumes-web-app](./distribution/kubeflow/notebooks/volumes-web-app): Kustomize files for installing the Volumes Web App
-  - [operators](./distribution/kubeflow/operators): Kustomize files for installing the various operators
-  - [pipelines](./distribution/kubeflow/pipelines): Kustomize files for installing Kubeflow Pipelines
 
 ### Root files
 

@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: central-dashboard
+  name: roles
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: <<__git_repo.url__>>
     targetRevision: <<__git_repo.target_revision__>>
-    path: distribution/kubeflow/central-dashboard/base
+    path: distribution/kubeflow/roles
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:
