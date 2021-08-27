@@ -62,14 +62,22 @@ Overview of the steps:
 For this installation the HA version of ArgoCD is used.
 Due to Pod Tolerations, 3 nodes will be required for this installation.
 If you do not wish to use a HA installation of ArgoCD,
-edit this [kustomization.yaml](./distribution/argocd/kustomization.yaml) and remove `/ha`
+edit this [kustomization.yaml](./distribution/argocd/base/kustomization.yaml) and remove `/ha`
 from the URI.
 
 1. Next, to install ArgoCD execute the following command:
 
-    ```bash
-    kustomize build distribution/argocd/ | kubectl apply -f -
-    ```
+- If you are using a public repo:
+
+  ```bash
+  kustomize build distribution/argocd/base/ | kubectl apply -f -
+  ```
+
+- ***Coming soon*** If you are using a private repo (note that this will use an ExternalSecret to fetch git credentials from the AWS Secret Manager):
+
+  ```bash
+  kustomize build distribution/argocd/overlays/private-repo/ | kubectl apply -f -
+  ```
 
 2. Install the ArgoCD CLI tool from [here](https://argoproj.github.io/argo-cd/cli_installation/)
 3. Access the ArgoCD UI by exposing it through a LoadBalander, Ingress or by port-fowarding
