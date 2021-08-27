@@ -7,22 +7,18 @@ resources:
   - https://github.com/argoproj/argo-cd/manifests/ha/cluster-install?ref=aab9542f8b3354f0940945c4295b67622f0af296 # tag=v2.1.1
 
 patchesStrategicMerge:
-  - configmap-patch.yaml
+  - patches/configmap-patch.yaml
 
 images:
   - name: ghcr.io/dexidp/dex
     newName: ghcr.io/dexidp/dex
     newTag: v2.30.0
-    # digest: sha256:63fc6ee14bcf1868ebfba90885aec76597e0f27bc8e89d1fd238b1f2ee3dea6e
   - name: quay.io/argoproj/argocd
     newName: quay.io/argoproj/argocd
     newTag: v2.1.1
-    # digest: sha256:c56f688ab4ab93f3da8b3223aa705bbbfa6c4f17568a266187a3e703d3b7a243
   - name: haproxy
     newName: haproxy
     newTag: 2.4.3-alpine
-    # digest: sha256:875275a0ea30ad381d79d3af91d8046a2e262886b3c89f568b9733e5fbb200b8
   - name: redis
     newName: redis
     newTag: 6.2.5-alpine
-    # digest: sha256:fc856014691d52258a64ab4ef05bf835ce416eb552576264d98309ec92949aba
