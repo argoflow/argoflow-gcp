@@ -172,9 +172,6 @@ Next, commit your changes and push them to your repository.
 Once you've commited and pushed your changes to your repository,
 you can either choose to deploy componenet individually or
 deploy them all at once.
-For example, to deploy a single component you can run:
-
-`kubectl apply -f distribution/argocd-applications/kubeflow-roles-namespaces.yaml`
 
 To deploy everything specified in the root [kustomization.yaml](./distribution/kustomization.yaml),
  execute:
