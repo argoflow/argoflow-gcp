@@ -8,6 +8,7 @@ resources:
   - argocd-applications/istio-resources.yaml
   - argocd-applications/knative.yaml
 
+  - argocd-applications/certificates.yaml
   - argocd-applications/sealed-secrets.yaml
 
   ## Kubeflow
