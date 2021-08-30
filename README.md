@@ -72,7 +72,7 @@ The default `username`, `password` and `namespace` of this deployment are:
 To change these, edit the `user` and `profile-name`
 (the namespace for this user) in [params.env](./distribution/kubeflow/user-namespace/params.env).
 
-Next, in [configmap-path.yaml](./distribution/dex-istio/configmap-patch.yaml)
+Next, in [configmap-path.yaml](./distribution/oidc-auth/overlays/dex/configmap-patch.yaml)
 under `staticPasswords`, change the `email`, the `hash` and the `username`
 for your used account.
 
@@ -92,7 +92,7 @@ python3 -c 'from passlib.hash import bcrypt; import getpass; print(bcrypt.using(
 ```
 
 To add new static users to Dex, you can add entries to the
-[configmap-path.yaml](./distribution/dex-istio/configmap-patch.yaml)
+[configmap-path.yaml](./distribution/oidc-auth/overlays/dex/configmap-patch.yaml)
 and set a password as described above.If you have already deployed Kubeflow
 commit these changes to your fork so Argo CD detects them. You will also
 need to kill the Dex pod or restart the dex deployment. This can be

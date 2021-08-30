@@ -12,7 +12,7 @@ resources:
   - argocd-applications/argocd.yaml
   - argocd-applications/cert-manager.yaml
   - argocd-applications/oidc-auth.yaml
-  - argocd-applications/dex-istio.yaml
+  - argocd-applications/oidc-auth-dex.yaml
 
   - argocd-applications/profile-controller_access-management.yaml
   - argocd-applications/kubeflow-namespace.yaml
