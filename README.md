@@ -1,10 +1,3 @@
-# Notice
-
-This repository is still a work in progress and is based on the
-generic repository found [here](https://github.com/argoflow/argoflow).
-Contributions to improve the integration with GCP and document
-these integrations are much appreciated.
-
 # Deploying Kubeflow with ArgoCD
 
 This repository contains Kustomize manifests that point to the upstream
@@ -57,19 +50,6 @@ from the URI.
   ```
 
 2. Install the ArgoCD CLI tool from [here](https://argoproj.github.io/argo-cd/cli_installation/)
-3. Access the ArgoCD UI by exposing it through a LoadBalander, Ingress or by port-fowarding
-using `kubectl port-forward svc/argocd-server -n argocd 8080:443`
-4. Login to the ArgoCD CLI. First get the default password for the `admin` user:
-    `kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d`
-
-    Next, login with the following command:
-    `argocd login <ARGOCD_SERVER>  # e.g. localhost:8080 or argocd.example.com`
-
-    Finally, update the account password with:
-    `argocd account update-password`
-5. You can now login to the ArgoCD UI with your new password.
-This UI will be handy to keep track of the created resources
-while deploying Kubeflow.
 
 Note - Argo CD needs to be able access your repository to deploy applications.
  If the fork of this repository that you are planning to use with Argo CD is private
@@ -144,13 +124,6 @@ Edit this file according to your requirements and uncomment the line in
 the [kustomization.yaml](./distribution/cert-manager/kustomization.yaml) file
 so it is included in the deployment.
 
-### Customizing the Jupyter Web App
-
-To customize the list of images presented in the Jupyter Web App
-and other related setting such as allowing custom images,
-edit the [spawner_ui_config.yaml](./distribution/kubeflow/notebooks/jupyter-web-app/spawner_ui_config.yaml)
-file.
-
 ### Change ArgoCD application specs and commit
 
 To simplify the process of telling ArgoCD to use your fork
@@ -190,6 +163,13 @@ simply make the change, commit it and push it to your fork
 of this repo. ArgoCD will automatically detect the changes
 and update the necessary resources in your cluster.
 
+### Customizing the Jupyter Web App
+
+To customize the list of images presented in the Jupyter Web App
+and other related setting such as allowing custom images,
+edit the [spawner_ui_config.yaml](./distribution/kubeflow/notebooks/jupyter-web-app/spawner_ui_config.yaml)
+file.
+
 ### Bonus: Extending the Volumes Web App with a File Browser
 
 A large problem for many people is how to easily upload or download data to and from the
@@ -216,3 +196,19 @@ the [kubeflow.yaml](./distribution/kubeflow.yaml) file, you can edit the root
 [kustomization.yaml](./distribution/kustomization.yaml) and comment out the regular
 Volumes Web App and uncomment the PVCViewer Controller and Experimental
 Volumes Web App.
+
+### Accessing the ArgoCD UI
+
+1. Access the ArgoCD UI by exposing it through a LoadBalander, Ingress or by port-fowarding
+using `kubectl port-forward svc/argocd-server -n argocd 8080:443`
+2. Login to the ArgoCD CLI. First get the default password for the `admin` user:
+    `kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d`
+
+    Next, login with the following command:
+    `argocd login <ARGOCD_SERVER>  # e.g. localhost:8080 or argocd.example.com`
+
+    Finally, update the account password with:
+    `argocd account update-password`
+3. You can now login to the ArgoCD UI with your new password.
+This UI will be handy to keep track of the created resources
+while deploying Kubeflow.
