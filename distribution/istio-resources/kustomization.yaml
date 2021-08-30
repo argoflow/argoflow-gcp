@@ -4,6 +4,9 @@ kind: Kustomization
 resources:
   - cluster-local-gateway.yaml
   - deny-all-authorizationpolicy.yaml
+  - envoy-filter-ingressgateway-settings.yaml
+  - envoy-filter-kubeflow-userid.yaml
+  - envoy-filter-proxy-protocol.yaml
   - ingress-certificate.yaml
-  # - kubeflow-cluster-roles.yaml
+  - kubeflow-cluster-roles.yaml
   - kubeflow-gateway.yaml
