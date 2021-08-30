@@ -104,8 +104,8 @@ spec:
       neverInjectSelector:
       # kube-prometheus-stack
       ## Admission Webhook jobs do not terminate as expected with istio-proxy
-      - matchExpressions:
-        - {key: app, operator: In, values: [kube-prometheus-stack-admission-create, kube-prometheus-stack-admission-patch, alertmanager]}
+        - matchExpressions:
+            - {key: app, operator: In, values: [kube-prometheus-stack-admission-create, kube-prometheus-stack-admission-patch, alertmanager]}
     pilot:
       autoscaleEnabled: true
       autoscaleMax: 5

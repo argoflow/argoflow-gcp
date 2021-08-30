@@ -9,9 +9,9 @@ spec:
     app: cluster-local-gateway
     istio: cluster-local-gateway
   servers:
-  - port:
-      number: 80
-      name: http
-      protocol: HTTP
-    hosts:
-    - '*'
+    - port:
+        number: 80
+        name: http
+        protocol: HTTP
+      hosts:
+        - '*'
