@@ -190,7 +190,7 @@ Here is an example of the PVC Viewer in action:
 To use the PVCViewer Controller, it must be deployed along with an updated version
 of the Volumes Web App. To do so, deploy
 [experimental-pvcviewer-controller.yaml](./distribution/argocd-applications/experimental-pvcviewer-controller.yaml) and
-[experimental-volumes-web-app.yaml](./distribution/argocd-application/experimental-volumes-web-app.yaml)
+[experimental-volumes-web-app.yaml](./distribution/argocd-applications/experimental-volumes-web-app.yaml)
 instead of the regular Volumes Web App. If you are deploying Kubeflow with
 the [kubeflow.yaml](./distribution/kubeflow.yaml) file, you can edit the root
 [kustomization.yaml](./distribution/kustomization.yaml) and comment out the regular
