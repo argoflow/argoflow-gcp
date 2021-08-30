@@ -8,7 +8,7 @@ metadata:
 aggregationRule:
   clusterRoleSelectors:
     - matchLabels:
-      rbac.authorization.kubeflow.org/aggregate-to-kubeflow-istio-admin: "true"
+        rbac.authorization.kubeflow.org/aggregate-to-kubeflow-istio-admin: "true"
 rules: []
 
 ---
