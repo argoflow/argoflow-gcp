@@ -40,13 +40,13 @@ from the URI.
 - If you are using a public repo:
 
   ```bash
-  kustomize build distribution/argocd/base/ | kubectl apply -f -
+  kubectl apply -k distribution/argocd/base/
   ```
 
 - ***Coming soon*** If you are using a private repo (note that this will use an ExternalSecret to fetch git credentials from the AWS Secret Manager):
 
   ```bash
-  kustomize build distribution/argocd/overlays/private-repo/ | kubectl apply -f -
+  kubectl apply -k distribution/argocd/overlays/private-repo/
   ```
 
 2. Install the ArgoCD CLI tool from [here](https://argoproj.github.io/argo-cd/cli_installation/)
