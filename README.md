@@ -22,6 +22,18 @@ Overview of the steps:
 - run `kubectl apply -f distribution/kubeflow.yaml`
 
 
+## Prerequisites
+
+Mandatory:
+  - [kubectl](https://kubernetes.io/docs/tasks/tools/)
+
+Optional (if using setup_credentials.sh to generate initial credentials as sealed secrets):
+  - [yq](https://github.com/mikefarah/yq)
+  - [python 3.6 or newer](https://www.python.org/downloads/)
+  - [kubeseal](https://github.com/bitnami-labs/sealed-secrets/releases/tag/v0.16.0)
+  - Python libraries:
+    - passlib
+
 ### Root files
 
 - [kustomization.yaml](./distribution/kustomization.yaml): Kustomization file that references the ArgoCD application files in [argocd-applications](./distribution/argocd-applications)
@@ -72,35 +84,7 @@ The default `username`, `password` and `namespace` of this deployment are:
 To change these, edit the `user` and `profile-name`
 (the namespace for this user) in [params.env](./distribution/kubeflow/user-namespace/params.env).
 
-Next, in [configmap-path.yaml](./distribution/oidc-auth/overlays/dex/configmap-patch.yaml)
-under `staticPasswords`, change the `email`, the `hash` and the `username`
-for your used account.
-
-```yaml
-staticPasswords:
-- email: user
-  hash: $2y$12$4K/VkmDd1q1Orb3xAt82zu8gk7Ad6ReFR4LCP9UeYE90NLiN9Df72
-  username: user
-```
-
-The `hash` is the bcrypt has of your password.
-You can generate this using [this website](https://passwordhashing.com/BCrypt),
-or with the command below:
-
-```bash
-python3 -c 'from passlib.hash import bcrypt; import getpass; print(bcrypt.using(rounds=12, ident="2y").hash(getpass.getpass()))'
-```
-
-To add new static users to Dex, you can add entries to the
-[configmap-path.yaml](./distribution/oidc-auth/overlays/dex/configmap-patch.yaml)
-and set a password as described above.If you have already deployed Kubeflow
-commit these changes to your fork so Argo CD detects them. You will also
-need to kill the Dex pod or restart the dex deployment. This can be
-done in the Argo CD UI, or by running the following command:
-
-```bash
-kubectl rollout restart deployment dex -n auth
-```
+Next, `cd distribution/oidc-auth/overlays/dex`, run `./auth-setup.sh`
 
 ### Ingress and Certificate
 
