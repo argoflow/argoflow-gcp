@@ -1,0 +1,27 @@
+---
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: auth-allow-in-cluster-redirect
+  namespace: istio-system
+spec:
+  action: ALLOW
+  selector:
+    matchLabels:
+      app: istio-ingressgateway
+      istio: ingressgateway
+  rules:
+    - to:
+        - operation:
+            hosts:
+              - "*"
+---
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: auth-allow-access
+  namespace: auth
+spec:
+  action: ALLOW
+  rules:
+    - {}
