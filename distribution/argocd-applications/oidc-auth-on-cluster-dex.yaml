@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: oidc-auth-dex
+  name: oidc-auth
   namespace: argocd
 spec:
   project: default
@@ -11,7 +11,10 @@ spec:
     path: distribution/oidc-auth/overlays/dex
   destination:
     server: https://kubernetes.default.svc
+    namespace: auth
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
