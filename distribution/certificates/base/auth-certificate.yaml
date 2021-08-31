@@ -8,6 +8,6 @@ spec:
   issuerRef:
     name: gateways-issuer
     kind: ClusterIssuer
-  commonName: kubeflow.cluster
+  commonName: dex.auth.svc.cluster.local
   dnsNames:
-    - kubeflow.cluster
+    - dex.auth.svc.cluster.local
