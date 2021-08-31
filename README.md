@@ -32,6 +32,7 @@ Optional (if using setup_credentials.sh to generate initial credentials as seale
   - [python 3.6 or newer](https://www.python.org/downloads/)
   - [kubeseal](https://github.com/bitnami-labs/sealed-secrets/releases/tag/v0.16.0)
   - Python libraries:
+    - bcrypt
     - passlib
 
 ### Root files
