@@ -1,0 +1,19 @@
+apiVersion: install.istio.io/v1alpha1
+kind: IstioOperator
+metadata:
+  namespace: istio-system
+  name: istio
+spec:
+  profile: default
+  tag: 1.10.4 # istio/operator
+  hub: docker.io/istio
+  meshConfig:
+    accessLogFile: /dev/stdout
+    enablePrometheusMerge: true
+  values:
+    sidecarInjectorWebhook:
+      neverInjectSelector:
+      # kube-prometheus-stack
+      ## Admission Webhook jobs do not terminate as expected with istio-proxy
+        - matchExpressions:
+            - {key: app, operator: In, values: [kube-prometheus-stack-admission-create,kube-prometheus-stack-admission-patch]}

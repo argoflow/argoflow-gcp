@@ -5,9 +5,12 @@ metadata:
   namespace: kubeflow
 spec:
   template:
+    metadata:
+      annotations:
+        sidecar.istio.io/inject: "true"
     spec:
       containers:
         - name: centraldashboard
           env:
             - name: REGISTRATION_FLOW
-              value: "true"
+              value: <<__enable_registration_flow__>>
