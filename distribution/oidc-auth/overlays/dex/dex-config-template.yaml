@@ -1,6 +1,4 @@
-# TODO
-# issuer: https://<<__subdomain_auth__>>.<<__domain__>>
-issuer: http://dex.auth.svc.cluster.local:5556/dex
+issuer: https://<<__subdomain_auth__>>.<<__domain__>>
 storage:
   type: kubernetes
   config:
