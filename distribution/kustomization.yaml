@@ -6,6 +6,8 @@ resources:
   - argocd-applications/istio.yaml
   - argocd-applications/knative.yaml
 
+  - argocd-applications/sealed-secrets.yaml
+
   ## Kubeflow
   - argocd-applications/central-dashboard.yaml
 
