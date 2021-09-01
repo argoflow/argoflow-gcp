@@ -1,2 +1,2 @@
 .DS_Store
-.envrc # This is for https://github.com/direnv/direnv
+.envrc
