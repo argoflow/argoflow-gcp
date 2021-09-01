@@ -3,8 +3,8 @@ kind: Kustomization
 
 resources:
   - allow-all-ns-knative-authorization-policy.yaml
-  - serving-core-v0_22_0.yaml
-  - net-istio-v0_22_0.yaml
+  - serving-core-v0_24_0.yaml
+  - net-istio-v0_24_0.yaml
 
 images:
   - name: gcr.io/knative-releases/knative.dev/serving/cmd/activator
