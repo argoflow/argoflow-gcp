@@ -11,10 +11,10 @@ spec:
     path: manifests/charts/istio-operator
     helm:
       parameters:
-        - name: hub
-          value: docker.io/istio
-        - name: tag
-          value: 1.10.4 # istio/operator
+      - name: hub
+        value: docker.io/istio
+      - name: tag
+        value: 1.10.4 # istio/operator
   destination:
     server: https://kubernetes.default.svc
     namespace: istio-operator

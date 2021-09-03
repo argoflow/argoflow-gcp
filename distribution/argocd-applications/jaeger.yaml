@@ -11,8 +11,8 @@ spec:
     chart: jaeger
     helm:
       parameters:
-      - name : collector.service.zipkin.port
-        value : "9411"
+      - name: collector.service.zipkin.port
+        value: "9411"
   destination:
     server: https://kubernetes.default.svc
     namespace: istio-system

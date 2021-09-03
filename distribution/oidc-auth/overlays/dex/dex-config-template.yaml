@@ -22,8 +22,8 @@ staticPasswords:
 staticClients:
 - id:
   redirectURIs:
-    - "/login/oidc"
-    # TODO
-    # - https://<<__subdomain_dashboard__>>.<<__domain__>>/oauth2/callback
+  - "/login/oidc"
+  # TODO
+  # - https://<<__subdomain_dashboard__>>.<<__domain__>>/oauth2/callback
   name: Dex Login Application
   secret:
