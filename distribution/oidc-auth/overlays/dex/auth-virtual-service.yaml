@@ -7,12 +7,12 @@ metadata:
     app: auth
 spec:
   gateways:
-    - auth-gateway
+  - auth-gateway
   hosts:
-    - <<__subdomain_auth__>>.<<__domain__>>
+  - <<__subdomain_auth__>>.<<__domain__>>
   http:
-    - route:
-        - destination:
-            host: dex
-            port:
-              number: 5556
+  - route:
+    - destination:
+        host: dex
+        port:
+          number: 5556
