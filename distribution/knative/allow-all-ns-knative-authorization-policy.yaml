@@ -9,4 +9,4 @@ metadata:
 spec:
   action: ALLOW
   rules:
-    - {}
+  - {}

@@ -1,5 +1,16 @@
 extends: default
 rules:
   line-length:
-    max: 120
+    max: 160
     level: warning
+    ignore: |
+      /distribution/oidc-auth/overlays/dex/dex-config-secret.yaml
+  indentation:
+    spaces: 2
+    indent-sequences: false
+  document-start: disable
+  comments:
+    min-spaces-from-content: 0
+ignore: |
+  /distribution/knative/net-istio-v0_24_0.yaml
+  /distribution/knative/serving-core-v0_24_0.yaml

@@ -15,15 +15,15 @@ expiry:
   idTokens: 1h
 enablePasswordDB: true
 staticPasswords:
-  - email:
-    hash:
-    username:
-    userID: "15841185641784"
+- email:
+  hash:
+  username:
+  userID: "15841185641784"
 staticClients:
-  - id:
-    redirectURIs:
-      - "/login/oidc"
-      # TODO
-      # - https://<<__subdomain_dashboard__>>.<<__domain__>>/oauth2/callback
-    name: Dex Login Application
-    secret:
+- id:
+  redirectURIs:
+  - "/login/oidc"
+  # TODO
+  # - https://<<__subdomain_dashboard__>>.<<__domain__>>/oauth2/callback
+  name: Dex Login Application
+  secret:

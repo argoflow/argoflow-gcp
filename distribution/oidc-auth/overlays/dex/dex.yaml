@@ -9,10 +9,10 @@ spec:
     chart: dex
     helm:
       parameters:
-        - name: configSecret.create
-          value: "false"
-        - name: configSecret.name
-          value: dex-config
+      - name: configSecret.create
+        value: "false"
+      - name: configSecret.name
+        value: dex-config
     repoURL: https://charts.dexidp.io
     targetRevision: 0.6.3
   destination:
@@ -23,4 +23,4 @@ spec:
       prune: true
       selfHeal: true
     syncOptions:
-      - CreateNamespace=true
+    - CreateNamespace=true
