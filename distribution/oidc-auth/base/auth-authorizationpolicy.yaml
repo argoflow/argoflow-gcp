@@ -11,11 +11,11 @@ spec:
       app: istio-ingressgateway
       istio: ingressgateway
   rules:
-    - to:
-        - operation:
-            hosts:
-              - <<__subdomain_auth__>>.<<__domain__>>
-              - <<__subdomain_dashboard__>>.<<__domain__>>
+  - to:
+    - operation:
+        hosts:
+        - <<__subdomain_auth__>>.<<__domain__>>
+        - <<__subdomain_dashboard__>>.<<__domain__>>
 ---
 apiVersion: security.istio.io/v1beta1
 kind: AuthorizationPolicy
@@ -25,4 +25,4 @@ metadata:
 spec:
   action: ALLOW
   rules:
-    - {}
+  - {}
