@@ -2,22 +2,22 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - github.com/kubeflow/katib/manifests/v1beta1/installs/katib-with-kubeflow?ref=bfae181429c512367f9b14802849a113bf3fc97d # tag=v0.12.0-rc.0
+- github.com/kubeflow/katib/manifests/v1beta1/installs/katib-with-kubeflow?ref=bfae181429c512367f9b14802849a113bf3fc97d # tag=v0.12.0-rc.0
 
 images:
-  - name: docker.io/kubeflowkatib/katib-controller
-    newName: docker.io/kubeflowkatib/katib-controller
-    newTag: v0.12.0-rc.0
-    # digest: sha256:6f621e62345e3eeb968a312a1d8de878a34a2ecfeba2cef637a8b42bf3423c8d
-  - name: docker.io/kubeflowkatib/katib-db-manager
-    newName: docker.io/kubeflowkatib/katib-db-manager
-    newTag: v0.12.0-rc.0
-    # digest: sha256:383b1e332eb7bf155f3c5834bf3ea4fc448a351c3cdd1c03bb213a2d3b717a6c
-  - name: docker.io/kubeflowkatib/katib-ui
-    newName: docker.io/kubeflowkatib/katib-ui
-    newTag: v0.12.0-rc.0
-    # digest: sha256:d5374fe46b02f0e5abcd7f1df7bd8a4cc0cd167da244ab821bed2c594060470f
-  - name: mysql
-    newName: mysql
-    newTag: "8"
-    # digest: sha256:c744f48715807b821411cc52862676fdd18a2458b4a179cae56854d320c85538
+- name: docker.io/kubeflowkatib/katib-controller
+  newName: docker.io/kubeflowkatib/katib-controller
+  newTag: v0.12.0-rc.0
+  # digest: sha256:6f621e62345e3eeb968a312a1d8de878a34a2ecfeba2cef637a8b42bf3423c8d
+- name: docker.io/kubeflowkatib/katib-db-manager
+  newName: docker.io/kubeflowkatib/katib-db-manager
+  newTag: v0.12.0-rc.0
+  # digest: sha256:383b1e332eb7bf155f3c5834bf3ea4fc448a351c3cdd1c03bb213a2d3b717a6c
+- name: docker.io/kubeflowkatib/katib-ui
+  newName: docker.io/kubeflowkatib/katib-ui
+  newTag: v0.12.0-rc.0
+  # digest: sha256:d5374fe46b02f0e5abcd7f1df7bd8a4cc0cd167da244ab821bed2c594060470f
+- name: mysql
+  newName: mysql
+  newTag: "8"
+  # digest: sha256:c744f48715807b821411cc52862676fdd18a2458b4a179cae56854d320c85538

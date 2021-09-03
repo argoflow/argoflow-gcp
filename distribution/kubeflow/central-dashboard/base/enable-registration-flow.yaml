@@ -10,7 +10,7 @@ spec:
         sidecar.istio.io/inject: "true"
     spec:
       containers:
-        - name: centraldashboard
-          env:
-            - name: REGISTRATION_FLOW
-              value: <<__enable_registration_flow__>>
+      - name: centraldashboard
+        env:
+        - name: REGISTRATION_FLOW
+          value: <<__enable_registration_flow__>>
