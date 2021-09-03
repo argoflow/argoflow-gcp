@@ -10,7 +10,7 @@ spec:
     targetRevision: 0.46.5
     chart: jaeger
     helm:
-     parameters:
+      parameters:
       - name : collector.service.zipkin.port
         value : "9411"
   destination:

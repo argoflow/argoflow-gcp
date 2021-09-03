@@ -11,4 +11,4 @@ spec:
       app: cluster-local-gateway
       istio: cluster-local-gateway
   rules:
-    - {}
+  - {}
