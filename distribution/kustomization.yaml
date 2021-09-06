@@ -40,6 +40,7 @@ resources:
 
 ## Monitoring
 - argocd-applications/jaeger.yaml
+- argocd-applications/kube-prometheus-stack.yaml
 
 ## Contrib
 # - argocd-applications/experimental-pvcviewer-controller.yaml
