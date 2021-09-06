@@ -39,6 +39,7 @@ resources:
 - argocd-applications/xgboost-operator.yaml
 
 ## Monitoring
+- argocd-applications/monitoring-resources.yaml
 - argocd-applications/jaeger.yaml
 - argocd-applications/kube-prometheus-stack.yaml
 
