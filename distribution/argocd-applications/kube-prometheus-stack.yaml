@@ -24,7 +24,7 @@ spec:
       - name: grafana.persistence.accessModes[0]
         value: ReadWriteOnce
       - name: grafana.persistence.size
-        value: 20Gi
+        value: 10Gi
       - name: grafana.grafana\.ini.server.root_url
         value: https://<<__subdomain_grafana__>>.<<__domain__>>/grafana/
       - name: grafana.grafana\.ini.server.serve_from_sub_path
@@ -44,7 +44,7 @@ spec:
       - name: prometheus.prometheusSpec.storageSpec.volumeClaimTemplate.spec.accessModes[0]
         value: ReadWriteOnce
       - name: prometheus.prometheusSpec.storageSpec.volumeClaimTemplate.spec.resources.requests.storage
-        value: 50Gi
+        value: 20Gi
       - name: prometheus.prometheusSpec.serviceMonitorSelectorNilUsesHelmValues
         value: "false"
       - name: prometheus.prometheusSpec.serviceMonitorSelector
