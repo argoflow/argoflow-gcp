@@ -44,7 +44,7 @@ spec:
       - name: prometheus.prometheusSpec.storageSpec.volumeClaimTemplate.spec.accessModes[0]
         value: ReadWriteOnce
       - name: prometheus.prometheusSpec.storageSpec.volumeClaimTemplate.spec.resources.requests.storage
-        value: 20Gi
+        value: 10Gi
       - name: prometheus.prometheusSpec.serviceMonitorSelectorNilUsesHelmValues
         value: "false"
       - name: prometheus.prometheusSpec.serviceMonitorSelector
