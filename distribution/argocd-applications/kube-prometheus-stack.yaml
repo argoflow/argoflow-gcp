@@ -20,7 +20,7 @@ spec:
       - name: grafana.persistence.enabled
         value: "true"
       - name: grafana.persistence.storageClassName
-        value: default
+        value: standard
       - name: grafana.persistence.accessModes[0]
         value: ReadWriteOnce
       - name: grafana.persistence.size
@@ -40,7 +40,7 @@ spec:
       - name: grafana.grafana\.ini.security.allow_embedding
         value: "true"
       - name: prometheus.prometheusSpec.storageSpec.volumeClaimTemplate.spec.storageClassName
-        value: default
+        value: standard
       - name: prometheus.prometheusSpec.storageSpec.volumeClaimTemplate.spec.accessModes[0]
         value: ReadWriteOnce
       - name: prometheus.prometheusSpec.storageSpec.volumeClaimTemplate.spec.resources.requests.storage
