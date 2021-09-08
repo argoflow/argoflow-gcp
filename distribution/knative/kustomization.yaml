@@ -6,6 +6,10 @@ resources:
 - serving-core-v0_24_0.yaml
 - net-istio-v0_24_0.yaml
 
+# removals
+- removals/remove-knative-ingress-gateway.yaml
+- removals/remove-knative-local-gateway.yaml
+
 images:
 - name: gcr.io/knative-releases/knative.dev/serving/cmd/activator
   newName: gcr.io/knative-releases/knative.dev/serving/cmd/activator
