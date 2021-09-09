@@ -6,6 +6,7 @@ resources:
 - serving-core-v0_24_0.yaml
 - net-istio-v0_24_0.yaml
 
+patchesStrategicMerge:
 # removals
 - removals/remove-knative-ingress-gateway.yaml
 - removals/remove-knative-local-gateway.yaml
