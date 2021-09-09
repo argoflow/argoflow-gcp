@@ -10,7 +10,7 @@ spec:
   - hosts:
     - <<__subdomain_grafana__>>.<<__domain__>>
     - <<__subdomain_kiali__>>.<<__domain__>>
-    - <<__subdomain_kubecost__>>.<<__domain__>>
+    # - <<__subdomain_kubecost__>>.<<__domain__>>
     port:
       name: http
       number: 80
@@ -21,7 +21,7 @@ spec:
   - hosts:
     - <<__subdomain_grafana__>>.<<__domain__>>
     - <<__subdomain_kiali__>>.<<__domain__>>
-    - <<__subdomain_kubecost__>>.<<__domain__>>
+    # - <<__subdomain_kubecost__>>.<<__domain__>>
     port:
       name: https
       number: 443
