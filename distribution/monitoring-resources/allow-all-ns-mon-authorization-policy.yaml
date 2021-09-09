@@ -1,0 +1,9 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: kubeflow-allow-monitoring
+  namespace: monitoring
+spec:
+  action: ALLOW
+  rules:
+  - {}
