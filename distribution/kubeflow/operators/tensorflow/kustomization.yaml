@@ -8,4 +8,3 @@ images:
 - name: public.ecr.aws/j1r0q0g6/training/tf-operator
   newName: public.ecr.aws/j1r0q0g6/training/tf-operator
   newTag: 47a74b738920edbf4207160cec7e1dff9cdab3f2
-  # digest: sha256:b10739e751783fc0878505a4b2078c61a3d2a4471a7762f01e320d2f2ef162bd

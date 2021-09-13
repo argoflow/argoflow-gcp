@@ -8,4 +8,3 @@ images:
 - name: davidspek/kubeflow-pvcviewer-controller
   newName: davidspek/kubeflow-pvcviewer-controller
   newTag: "0.7"
-  # digest: sha256:2cd7e1eab058b93d99d4e3de5d6f5db4a9585448d38ba3095d68ef59f32009dd

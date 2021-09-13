@@ -8,8 +8,6 @@ images:
 - name: gcr.io/kfserving/kfserving-controller
   newName: gcr.io/kfserving/kfserving-controller
   newTag: v0.6.1
-  # digest: sha256:b57a6ee95204c6187f13128219f810e0a7b08b5bb4a0207c61aea09d1782e672
 - name: kfserving/models-web-app
   newName: kfserving/models-web-app
   newTag: v0.6.1
-  # digest: sha256:830d9d741a1175f6a957cd8cef04c90511e4182d5b375aa6c7ec029288da6d89
