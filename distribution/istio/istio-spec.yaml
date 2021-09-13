@@ -12,6 +12,8 @@ spec:
     enablePrometheusMerge: true
     enableTracing: true
     defaultConfig:
+      gatewayTopology:
+        numTrustedProxies: 2
       tracing:
         sampling: 100.0
         max_path_tag_length: 256
@@ -23,8 +25,6 @@ spec:
       k8s:
         service:
           type: LoadBalancer
-        serviceAnnotations:
-          proxy.istio.io/config: '{"gatewayTopology" : { "numTrustedProxies": 2 } }'
     # Cluster-local gateway for KFServing
     - enabled: true
       name: cluster-local-gateway
