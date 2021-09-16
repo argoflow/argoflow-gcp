@@ -17,7 +17,7 @@ spec:
         - <<__subdomain_auth__>>.<<__domain__>>
         - <<__subdomain_dashboard__>>.<<__domain__>>
         - <<__subdomain_serving__>>.<<__domain__>>
-        - '*.<<__subdomain_serving__>>.<<__domain__>>'
+        - "*.<<__subdomain_serving__>>.<<__domain__>>"
         # - <<__subdomain_kubecost__>>.<<__domain__>>
 ---
 apiVersion: security.istio.io/v1beta1
