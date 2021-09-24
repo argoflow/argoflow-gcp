@@ -6,9 +6,6 @@ resources:
 - ../../base
 - secret.yaml
 
-patchesStrategicMerge:
-- patches/configmap-patch.yaml
-
 images:
 - name: ghcr.io/dexidp/dex
   newName: ghcr.io/dexidp/dex
