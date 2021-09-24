@@ -56,7 +56,7 @@ from the URI.
   kubectl apply -k distribution/argocd/base/
   ```
 
-- ***Coming soon*** If you are using a private repo (note that this will use an ExternalSecret to fetch git credentials from the AWS Secret Manager):
+- If you are using a private repo:
 
   ```bash
   kubectl apply -k distribution/argocd/overlays/private-repo/
