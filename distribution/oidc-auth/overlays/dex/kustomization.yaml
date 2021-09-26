@@ -5,10 +5,10 @@ resources:
 - ../../base
 - auth-virtual-service.yaml
 - dex-config-secret.yaml
-- oauth2-proxy-secret.yaml
 - dex.yaml
+- oauth2-proxy-secret.yaml
 
 patchesStrategicMerge:
-- oauth2-proxy-signout-virtual-service.yaml
 - oauth2-proxy-patch.yaml
+- oauth2-proxy-signout-virtual-service.yaml
 - removals/oauth2-proxy-secret.yaml
