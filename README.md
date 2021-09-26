@@ -29,7 +29,7 @@ Mandatory:
 
 Optional (if using setup_credentials.sh to generate initial credentials as sealed secrets):
   - [yq](https://github.com/mikefarah/yq)
-  - [python 3.6 or newer](https://www.python.org/downloads/)
+  - [Python 3.8 or newer](https://www.python.org/downloads/)
   - [kubeseal](https://github.com/bitnami-labs/sealed-secrets/releases/tag/v0.16.0)
   - Python libraries:
     - bcrypt
@@ -50,13 +50,13 @@ from the URI.
 
 1. Next, to install ArgoCD execute the following command:
 
-- If you are using a public repo:
+- If you are using a public repo, or you want to configure credentials using Argo CD UI later:
 
   ```bash
   kubectl apply -k distribution/argocd/base/
   ```
 
-- If you are using a private repo:
+- If you are using a private repo and want to set up credentials declaratively:
 
   ```bash
   kubectl apply -k distribution/argocd/overlays/private-repo/
