@@ -78,15 +78,6 @@ Next, apply any customization you require in the kustomize folders of the Kubefl
 applications. Next will follow a set of recommended changes that we encourage everybody
 to make.
 
-### Credentials
-
-The default `username`, `password` and `namespace` of this deployment are:
-`user`, `12341234` and `kubeflow-user` respectively.
-To change these, edit the `user` and `profile-name`
-(the namespace for this user) in [params.env](./distribution/kubeflow/user-namespace/params.env).
-
-Next, `cd distribution/oidc-auth/overlays/dex`, run `./auth-setup.sh`
-
 ### Ingress and Certificate
 
 By default the Istio Ingress Gateway is setup to use a LoadBalancer
