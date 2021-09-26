@@ -49,10 +49,6 @@ spec:
         value: <<__oidc.scope__>>
       - name: extraArgs.user-id-claim
         value: <<__oidc.user_id_claim__>>
-      - name: sessionStorage.type
-        value: redis
-      - name: sessionStorage.redis.standalone.clientType
-        value: standalone
     repoURL: https://oauth2-proxy.github.io/manifests
     targetRevision: 4.1.1
   destination:
