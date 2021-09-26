@@ -19,13 +19,41 @@ spec:
         max_path_tag_length: 256
         zipkin:
           address: jaeger-collector.istio-system.svc.cluster.local:9411
+    extensionProviders:
+    - name: oauth2-proxy
+      envoyExtAuthzHttp:
+        service: oauth2-proxy.auth.svc.cluster.local
+        port: "4180"
+        includeHeadersInCheck:
+        - cookie
+        - x-forwarded-access-token
+        - x-forwarded-user
+        - x-forwarded-email
+        - authorization
+        - x-forwarded-proto
+        - proxy-authorization
+        - user-agent
+        - x-forwarded-host
+        - from
+        - x-forwarded-for
+        - accept
+        headersToUpstreamOnAllow:
+        - authorization
+        - path
+        - x-auth-request-user
+        - x-auth-request-email
+        - x-auth-request-access-token
+        - x-auth-request-user-groups
+        headersToDownstreamOnDeny:
+        - content-type
+        - set-cookie
   components:
     ingressGateways:
     - name: istio-ingressgateway
       k8s:
         service:
           type: LoadBalancer
-    # Cluster-local gateway for KFServing
+    # Cluster-local gateway for KF Serving
     - enabled: true
       name: cluster-local-gateway
       label:
