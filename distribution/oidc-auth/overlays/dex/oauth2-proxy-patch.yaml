@@ -53,3 +53,6 @@ spec:
         value: https://<<__subdomain_auth__>>.<<__domain__>>/token
       - name: extraArgs.skip-oidc-discovery
         value: "true"
+      # TODO: This should be configurable
+      - name: extraArgs.ssl-insecure-skip-verify
+        value: "true"
