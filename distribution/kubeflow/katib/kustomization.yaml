@@ -2,7 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-- github.com/kubeflow/katib/manifests/v1beta1/installs/katib-with-kubeflow?ref=dfe8efec0ea2805b642ca331b3ca33f3aee4cd0a # tag=v0.12.0-rc.1
+- github.com/kubeflow/katib/manifests/v1beta1/installs/katib-with-kubeflow?ref=152ec0797c3025d6e4465df0f0654bf3b705fa18 # tag=v0.12.0
 
 images:
 - name: docker.io/kubeflowkatib/katib-controller
