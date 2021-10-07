@@ -18,4 +18,4 @@ images:
   newTag: 2.4.7-alpine
 - name: redis
   newName: redis
-  newTag: 6.2.5-alpine
+  newTag: 6.2.6-alpine
