@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: tensorflow-operator
+  name: training-operator
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: <<__git_repo.url__>>
     targetRevision: <<__git_repo.target_revision__>>
-    path: distribution/kubeflow/operators/tensorflow
+    path: distribution/kubeflow/training-operator
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:
