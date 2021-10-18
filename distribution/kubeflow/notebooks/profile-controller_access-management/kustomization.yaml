@@ -2,7 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-- github.com/kubeflow/kubeflow/components/profile-controller/config/overlays/kubeflow?ref=29ef970492ddbdbc83438276e60a2a38daf4f638 # tag=v1.4-rc.1
+- github.com/kubeflow/kubeflow/components/profile-controller/config/overlays/kubeflow?ref=1e9535ec06cae3823c33f29fc7890df9d32fcaf9 # tag=v1.4
 
 images:
 - name: public.ecr.aws/j1r0q0g6/notebooks/access-management
