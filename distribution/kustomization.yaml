@@ -22,6 +22,7 @@ resources:
 - argocd-applications/profile-controller_access-management.yaml
 - argocd-applications/kubeflow-namespace.yaml
 - argocd-applications/kubeflow-roles.yaml
+- argocd-applications/user-namespace.yaml
 - argocd-applications/pipelines.yaml
 - argocd-applications/katib.yaml
 - argocd-applications/kfserving.yaml
