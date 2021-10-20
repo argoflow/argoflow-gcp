@@ -85,8 +85,6 @@ The default `username`, `password` and `namespace` of this deployment are:
 To change these, edit the `user` and `profile-name`
 (the namespace for this user) in [params.env](./distribution/kubeflow/user-namespace/params.env).
 
-Next, `cd distribution/oidc-auth/overlays/dex`, run `./auth-setup.sh`
-
 ### Ingress and Certificate
 
 By default the Istio Ingress Gateway is setup to use a LoadBalancer
