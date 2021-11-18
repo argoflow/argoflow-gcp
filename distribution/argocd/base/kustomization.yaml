@@ -15,7 +15,7 @@ images:
   newTag: v2.30.2
 - name: quay.io/argoproj/argocd
   newName: quay.io/argoproj/argocd
-  newTag: v2.1.6
+  newTag: v2.1.7
 - name: haproxy
   newName: haproxy
   newTag: 2.4.8-alpine
