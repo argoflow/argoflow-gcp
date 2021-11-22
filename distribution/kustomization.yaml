@@ -2,6 +2,8 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
+- argocd-applications/argocd.yaml
+
 ## Common
 - argocd-applications/istio-operator.yaml
 - argocd-applications/istio.yaml
@@ -11,14 +13,16 @@ resources:
 - argocd-applications/certificates.yaml
 - argocd-applications/sealed-secrets.yaml
 
-## Kubeflow
-- argocd-applications/central-dashboard.yaml
+# Pick *one* of the following two applications
+# - argocd-applications/cert-manager-self-signing.yaml
+- argocd-applications/cert-manager-dns-01.yaml
 
-- argocd-applications/argocd.yaml
-- argocd-applications/cert-manager.yaml
+# Pick *one* of the following two applications
 # - argocd-applications/oidc-auth-external.yaml
 - argocd-applications/oidc-auth-on-cluster-dex.yaml
 
+## Kubeflow
+- argocd-applications/central-dashboard.yaml
 - argocd-applications/profile-controller_access-management.yaml
 - argocd-applications/kubeflow-namespace.yaml
 - argocd-applications/kubeflow-roles.yaml
