@@ -6,5 +6,5 @@ resources:
 
 patchesStrategicMerge:
 - patches/cluster-issuer.yaml
-- patches/service-account.yaml
 - patches/deployment.yaml
+- patches/service-account.yaml
