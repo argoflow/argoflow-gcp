@@ -13,6 +13,12 @@ spec:
       parameters:
       - name: collector.service.zipkin.port
         value: "9411"
+      - name: storage.type
+        value: elasticsearch
+      - name: provisionDataStore.cassandra
+        value: "false"
+      - name: provisionDataStore.elasticsearch
+        value: "true"
   destination:
     server: https://kubernetes.default.svc
     namespace: istio-system
