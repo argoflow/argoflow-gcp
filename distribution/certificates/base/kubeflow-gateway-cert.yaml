@@ -12,4 +12,3 @@ spec:
   dnsNames:
   - <<__subdomain_dashboard__>>.<<__domain__>>
   - <<__subdomain_serving__>>.<<__domain__>>
-  - "*.<<__subdomain_serving__>>.<<__domain__>>"
