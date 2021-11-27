@@ -148,49 +148,37 @@ and update the necessary resources in your cluster.
 ### Customizing the Jupyter Web App
 
 To customize the list of images presented in the Jupyter Web App
-and other related setting such as allowing custom images,
-edit the [spawner_ui_config.yaml](./distribution/kubeflow/notebooks/jupyter-web-app/spawner_ui_config.yaml)
-file.
+and other related setting such as allowing custom images, edit the
+[spawner_ui_config.yaml](./distribution/kubeflow/notebooks/jupyter-web-app/spawner_ui_config.yaml) file.
 
-### Bonus: Extending the Volumes Web App with a File Browser
+### Accessing the Argo CD UI
 
-A large problem for many people is how to easily upload or download data to and from the
-PVCs mounted as their workspace volumes for Notebook Servers. To make this easier
-a simple PVCViewer Controller was created (a slightly modified version of
-the tensorboard-controller). This feature was not ready in time for 1.3,
-and thus I am only documenting it here as an experimental feature as I believe
-many people would like to have this functionality. The images are grabbed from my
-personal dockerhub profile, but I can provide instructions for people that would
-like to build the images themselves. Also, it is important to note that
-the PVC Viewer will work with ReadWriteOnce PVCs, even when they are mounted
-to an active Notebook Server.
+1. Access the Argo CD UI by exposing it through a
+   LoadBalander, Ingress or by port-fowarding using
 
-Here is an example of the PVC Viewer in action:
+  ```bash
+  kubectl port-forward svc/argocd-server -n argocd 8080:443
+  ```
 
-![PVCViewer in action](./docs/images/vwa-pvcviewer-demo.gif)
+2. Login to the Argo CD CLI. First get the default password
+   for the `admin` user:
 
-To use the PVCViewer Controller, it must be deployed along with an updated version
-of the Volumes Web App. To do so, deploy
-[experimental-pvcviewer-controller.yaml](./distribution/argocd-applications/experimental-pvcviewer-controller.yaml) and
-[experimental-volumes-web-app.yaml](./distribution/argocd-applications/experimental-volumes-web-app.yaml)
-instead of the regular Volumes Web App. If you are deploying Kubeflow with
-the [kubeflow.yaml](./distribution/kubeflow.yaml) file, you can edit the root
-[kustomization.yaml](./distribution/kustomization.yaml) and comment out the regular
-Volumes Web App and uncomment the PVCViewer Controller and Experimental
-Volumes Web App.
+  ```bash
+  kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+  ```
 
-### Accessing the ArgoCD UI
+  - Next, login with the following command:
 
-1. Access the ArgoCD UI by exposing it through a LoadBalander, Ingress or by port-fowarding
-using `kubectl port-forward svc/argocd-server -n argocd 8080:443`
-2. Login to the ArgoCD CLI. First get the default password for the `admin` user:
-    `kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d`
+    ```bash
+    argocd login <ARGOCD_SERVER>  # e.g. localhost:8080 or argocd.example.com
+    ```
 
-    Next, login with the following command:
-    `argocd login <ARGOCD_SERVER>  # e.g. localhost:8080 or argocd.example.com`
+  - Finally, update the account password with:
 
-    Finally, update the account password with:
-    `argocd account update-password`
-3. You can now login to the ArgoCD UI with your new password.
+    ```bash
+    argocd account update-password
+    ```
+
+3. You can now login to the Argo CD UI with your new password.
 This UI will be handy to keep track of the created resources
 while deploying Kubeflow.
