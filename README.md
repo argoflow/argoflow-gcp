@@ -1,12 +1,12 @@
-# Deploying Kubeflow with ArgoCD
+# Deploying Kubeflow with Argo CD
 
 This repository contains Kustomize manifests that point to the upstream
 manifest of each Kubeflow component and provides an easy way for people
-to change their deployment according to their need. ArgoCD application
+to change their deployment according to their need. Argo CD application
 manifests for each componenet will be used to deploy Kubeflow. The intended
 usage is for people to fork this repository, make their desired kustomizations,
-run a script to change the ArgoCD application specs to point to their fork
-of this repository, and finally apply a master ArgoCD application that will
+run a script to change the Argo CD application specs to point to their fork
+of this repository, and finally apply a master Argo CD application that will
 deploy all other applications.
 
 To run the below script [yq](https://github.com/mikefarah/yq) version 4
@@ -14,65 +14,71 @@ must be installed
 
 Overview of the steps:
 
-- fork this repo
-- modify the kustomizations for your purpose
-- run `./setup_repo.sh <your_repo_fork_url> <your_branch_or_release>`
-- commit and push your changes
-- install ArgoCD in your Kubernetes cluster
-- run `kubectl apply -f distribution/kubeflow.yaml`
-
+- Fork this repo
+- Modify the kustomizations for your purpose
+- Run `./setup_repo.sh <your_repo_fork_url> <your_branch_or_release>`
+- Commit and push your changes
+- Install Argo CD in your Kubernetes cluster
+- Run `kubectl apply -f distribution/kubeflow.yaml`
 
 ## Prerequisites
 
-Mandatory:
-  - [kubectl](https://kubernetes.io/docs/tasks/tools/)
-
-Optional (if using setup_credentials.sh to generate initial credentials as sealed secrets):
+* **Optional** (if using `setup_credentials.sh` to generate initial credentials as sealed secrets):
   - [yq](https://github.com/mikefarah/yq)
-  - [Python 3.8 or newer](https://www.python.org/downloads/)
   - [kubeseal](https://github.com/bitnami-labs/sealed-secrets/releases/tag/v0.16.0)
+  - Python 3.8+
   - Python libraries:
     - bcrypt
     - passlib
 
 ### Root files
 
-- [kustomization.yaml](./distribution/kustomization.yaml): Kustomization file that references the ArgoCD application files in [argocd-applications](./distribution/argocd-applications)
-- [kubeflow.yaml](./distribution/kubeflow.yaml): ArgoCD application that deploys the ArgoCD applications referenced in [kustomization.yaml](./distribution/kustomization.yaml)
+* [kustomization.yaml](./distribution/kustomization.yaml):
+  - Kustomization file that references the Argo CD
+    application files in
+    [argocd-applications](./distribution/argocd-applications)
+* [kubeflow.yaml](./distribution/kubeflow.yaml):
+  - Argo CD application that deploys the Argo CD
+    applications referenced in
+    [kustomization.yaml](./distribution/kustomization.yaml)
 
-## Installing ArgoCD
+## Installing Argo CD
 
-For this installation the HA version of ArgoCD is used.
+For this installation the HA version of Argo CD is used.
 Due to Pod Tolerations, 3 nodes will be required for this installation.
-If you do not wish to use a HA installation of ArgoCD,
-edit this [kustomization.yaml](./distribution/argocd/base/kustomization.yaml) and remove `/ha`
-from the URI.
+If you do not wish to use a HA installation of Argo CD,
+edit this [kustomization.yaml](./distribution/argocd/base/kustomization.yaml)
+and remove `/ha` from the URI.
 
-1. Next, to install ArgoCD execute the following command:
+1. Next, to install Argo CD execute the following command:
 
-- If you are using a public repo, or you want to configure credentials using Argo CD UI later:
+- If you are using a public repo, or you want to
+  configure credentials using Argo CD UI later:
 
   ```bash
   kubectl apply -k distribution/argocd/base/
   ```
 
-- If you are using a private repo and want to set up credentials declaratively:
+- If you are using a private repo and want to
+  set up credentials declaratively:
 
   ```bash
   kubectl apply -k distribution/argocd/overlays/private-repo/
   ```
 
-2. Install the ArgoCD CLI tool from [here](https://argoproj.github.io/argo-cd/cli_installation/)
+2. Install the Argo CD CLI tool from [here](https://argoproj.github.io/argo-cd/cli_installation/)
 
-Note - Argo CD needs to be able access your repository to deploy applications.
- If the fork of this repository that you are planning to use with Argo CD is private
- you will need to add credentials so it can access the repository. Please see
- the instructions provided by Argo CD [here](https://argoproj.github.io/argo-cd/user-guide/private-repositories/).
+> **Note**: Argo CD needs to be able access your repository
+  to deploy applications. If the fork of this repository that
+  you are planning to use with Argo CD is private you will
+  need to add credentials so it can access the repository.
+  Please see the instructions provided by Argo CD
+  [here](https://argoproj.github.io/argo-cd/user-guide/private-repositories/).
 
 ## Installing Kubeflow
 
 The purpose of this repository is to make it easy for people to customize their Kubeflow
-deployment and have it managed through a GitOps tool like ArgoCD.
+deployment and have it managed through a GitOps tool like Argo CD.
 First, fork this repository and clone your fork locally.
 Next, apply any customization you require in the kustomize folders of the Kubeflow
 applications. Next will follow a set of recommended changes that we encourage everybody
@@ -95,16 +101,14 @@ the `spec.issuerRef.name` to the cert-manager ClusterIssuer you would like to us
 and set the `spec.commonName` and `spec.dnsNames[0]` to your Kubeflow domain.
 
 If you would like to use LetsEncrypt, a ClusterIssuer template if provided in
-[letsencrypt-cluster-issuer.yaml](./distribution/cert-manager/letsencrypt-cluster-issuer.yaml).
-Edit this file according to your requirements and uncomment the line in
-the [kustomization.yaml](./distribution/cert-manager/kustomization.yaml) file
-so it is included in the deployment.
+[lets-encrypt-dns-01](./distribution/cert-manager/overlays/lets-encrypt-dns-01).
 
-### Change ArgoCD application specs and commit
+### Change Argo CD application specs and commit
 
-To simplify the process of telling ArgoCD to use your fork
+To simplify the process of telling Argo CD to use your fork
 of this repo, a script is provided that updates the
-`spec.source.repoURL` and `spec.source.targetRevision` of all the ArgoCD application specs.
+`spec.source.repoURL` and `spec.source.targetRevision` of
+all the Argo CD application specs.
 
 ```bash
 ./setup_repo.sh <your_repo_fork_url> <your_branch_or_release>
@@ -122,21 +126,23 @@ Once you've commited and pushed your changes to your repository,
 you can either choose to deploy componenet individually or
 deploy them all at once.
 
-To deploy everything specified in the root [kustomization.yaml](./distribution/kustomization.yaml),
- execute:
+To deploy everything specified in the root
+[kustomization.yaml](./distribution/kustomization.yaml), execute:
 
- `kubectl apply -f distribution/kubeflow.yaml`
+```bash
+kubectl apply -f distribution/kubeflow.yaml
+```
 
 After this, you should start seeing applications being deployed in
-the ArgoCD UI and what the resources each application create.
+the Argo CD UI and what the resources each application create.
 
 ### Updating the deployment
 
-By default, all the ArgoCD application specs included here are
+By default, all the Argo CD application specs included here are
 setup to automatically sync with the specified repoURL.
 If you would like to change something about your deployment,
 simply make the change, commit it and push it to your fork
-of this repo. ArgoCD will automatically detect the changes
+of this repo. Argo CD will automatically detect the changes
 and update the necessary resources in your cluster.
 
 ### Customizing the Jupyter Web App
