@@ -8,56 +8,42 @@ images:
 - name: gcr.io/ml-pipeline/cache-deployer
   newName: gcr.io/ml-pipeline/cache-deployer
   newTag: 1.7.1
-  # digest: sha256:93fa999054697186a6503bc9e6d0d37e5cf4a8660d50372fce366a071688bc36
 - name: gcr.io/ml-pipeline/cache-server
   newName: gcr.io/ml-pipeline/cache-server
   newTag: 1.7.1
-  # digest: sha256:725399dcc51023fda5fad1bca48c4502d3095714ed48f2d1d01b593a18678983
 - name: gcr.io/ml-pipeline/metadata-envoy
   newName: gcr.io/ml-pipeline/metadata-envoy
   newTag: 1.7.1
-  # digest: sha256:63dd5beeaaddd7375b18665c49294accf0588c12aa565d650378548fb8b6344f
 - name: gcr.io/tfx-oss-public/ml_metadata_store_server
   newName: gcr.io/tfx-oss-public/ml_metadata_store_server
   newTag: 1.2.0
-  # digest: sha256:f8d91365b8f672a40aacb08e1957aaaa3effcdf5e14b654bb601bda32511f69c
 - name: gcr.io/ml-pipeline/metadata-writer
   newName: gcr.io/ml-pipeline/metadata-writer
   newTag: 1.7.1
-  # digest: sha256:3519219c4b9c052de5ad72c0767f820796918ae751fd467595086d33a16312cd
 - name: gcr.io/ml-pipeline/minio
   newName: gcr.io/ml-pipeline/minio
   newTag: RELEASE.2019-08-14T20-37-41Z-license-compliance
-  # digest: sha256:587abc14be9bbeed794473cf7290c40e377062f2f77f5e4e27742a77680f08e0
 - name: gcr.io/ml-pipeline/api-server
   newName: gcr.io/ml-pipeline/api-server
   newTag: 1.7.1
-  # digest: sha256:76119805d9f11ff4b3e30eca9e382dcf66e0e38fead58347fefec308f68e6686
 - name: gcr.io/ml-pipeline/persistenceagent
   newName: gcr.io/ml-pipeline/persistenceagent
   newTag: 1.7.1
-  # digest: sha256:4957e651279de023fdb5e22a0ba4481b10a58bb326a1b33e1a878737b5fbfdad
 - name: gcr.io/ml-pipeline/scheduledworkflow
   newName: gcr.io/ml-pipeline/scheduledworkflow
   newTag: 1.7.1
-  # digest: sha256:8a5fb6de6a00f736a90b700a6abc823d557c470ce2b833525840df46a0bb29f4
 - name: gcr.io/ml-pipeline/frontend
   newName: gcr.io/ml-pipeline/frontend
   newTag: 1.7.1
-  # digest: sha256:5d354e722bea1e4b7c003b1d9c94beddb25aacf9a3d0f389a0dbb22774e6a115
 - name: gcr.io/ml-pipeline/viewer-crd-controller
   newName: gcr.io/ml-pipeline/viewer-crd-controller
   newTag: 1.7.1
-  # digest: sha256:78fe1c25fcd2defd0ddf74f1c8dde83a43a7049103621900c5cb7d121b76d78e
 - name: gcr.io/ml-pipeline/visualization-server
   newName: gcr.io/ml-pipeline/visualization-server
   newTag: 1.7.1
-  # digest: sha256:1c132b909a4046fae90b115cc7eac53af773a29944b231a8b23952ab96fa9794
 - name: gcr.io/ml-pipeline/mysql
   newName: gcr.io/ml-pipeline/mysql
   newTag: "5.7"
-  # digest: sha256:4056370ee427dc9ff2337884674d8ee35f5b236c543bb8446b8b0a3751f70349
 - name: gcr.io/ml-pipeline/workflow-controller
   newName: gcr.io/ml-pipeline/workflow-controller
   newTag: v3.1.6-patch-license-compliance
-  # digest: sha256:0f3b2a58a92e98798e7b49c2f2edd3923f3edd997f1b3f12beae03d9f8bd56bc
