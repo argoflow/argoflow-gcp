@@ -16,7 +16,7 @@ Overview of the steps:
 
 - Fork this repo
 - Modify the kustomizations for your purpose
-- Run `./setup_repo.sh <your_repo_fork_url> <your_branch_or_release>`
+- Run `./setup_repo.py -c ./examples/setup.conf`
 - Commit and push your changes
 - Install Argo CD in your Kubernetes cluster
 - Run `kubectl apply -f distribution/kubeflow.yaml`
@@ -111,7 +111,7 @@ of this repo, a script is provided that updates the
 all the Argo CD application specs.
 
 ```bash
-./setup_repo.sh <your_repo_fork_url> <your_branch_or_release>
+./setup_repo.py -c ./examples/setup.conf
 ```
 
 To change what Kubeflow or third-party componenets are included in the deployment,
