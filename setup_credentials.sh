@@ -16,17 +16,6 @@ email=${email:-admin@argoflow.org}
 username=${username:-admin}
 password=${password:-$(python3 -c 'import secrets; print(secrets.token_hex(16))')}
 
-while [ $# -gt 0 ]; do
-
-   if [[ $1 == *"--"* ]]; then
-        param="${1/--/}"
-        declare $param="$2"
-        # echo $1 $2 // Optional to see the parameter:value result
-   fi
-
-  shift
-done
-
 ADMIN_PASS_DEX=$(python3 -c "from passlib.hash import bcrypt; print(bcrypt.using(rounds=12, ident='2y').hash(\"${password}\"))")
 
 # yq eval -i ".data.ADMIN = \"${email}\"" ${DISTRIBUTION_PATH}/kubeflow/notebooks/profile-controller_access-management/patch-admin.yaml
