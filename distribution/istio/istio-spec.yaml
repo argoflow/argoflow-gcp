@@ -53,6 +53,7 @@ spec:
       k8s:
         service:
           type: LoadBalancer
+          externalTrafficPolicy: Local
     # Cluster-local gateway for KF Serving
     - enabled: true
       name: cluster-local-gateway
