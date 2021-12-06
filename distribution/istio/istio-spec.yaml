@@ -26,36 +26,37 @@ spec:
         service: oauth2-proxy.auth.svc.cluster.local
         port: "4180"
         includeHeadersInCheck:
-        - cookie
-        - x-forwarded-access-token
-        - x-forwarded-user
-        - x-forwarded-email
+        - accept
         - authorization
-        - x-forwarded-proto
+        - cookie
+        - from
         - proxy-authorization
         - user-agent
+        - x-forwarded-access-token
         - x-forwarded-host
-        - from
+        - x-forwarded-proto
+        - x-forwarded-email
+        - x-forwarded-user
         - x-forwarded-for
-        - accept
         headersToUpstreamOnAllow:
         - authorization
         - path
-        - x-auth-request-user
-        - x-auth-request-email
         - x-auth-request-access-token
+        - x-auth-request-email
+        - x-auth-request-user
         - x-auth-request-user-groups
         headersToDownstreamOnDeny:
         - content-type
         - set-cookie
   components:
     ingressGateways:
-    - name: istio-ingressgateway
+    - enable: true
+      name: istio-ingressgateway
       k8s:
         service:
           type: LoadBalancer
           externalTrafficPolicy: Local
-    # Cluster-local gateway for KF Serving
+    # Cluster-local gateway for KServe
     - enabled: true
       name: cluster-local-gateway
       label:
@@ -67,12 +68,12 @@ spec:
           value: sni-dnat
         hpaSpec:
           maxReplicas: 5
+          minReplicas: 1
           metrics:
-          - resource:
+          - type: Resource
+            resource:
               name: cpu
               targetAverageUtilization: 80
-            type: Resource
-          minReplicas: 1
           scaleTargetRef:
             apiVersion: apps/v1
             kind: Deployment
@@ -93,7 +94,6 @@ spec:
           - name: http2
             port: 80
             targetPort: 8080
-    # Disable EgressGateway
     egressGateways:
     - enabled: false
       name: istio-egressgateway
