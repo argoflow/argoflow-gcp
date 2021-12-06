@@ -50,7 +50,7 @@ spec:
         - set-cookie
   components:
     ingressGateways:
-    - enable: true
+    - enabled: true
       name: istio-ingressgateway
       k8s:
         service:
