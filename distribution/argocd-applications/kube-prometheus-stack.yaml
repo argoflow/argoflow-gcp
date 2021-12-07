@@ -31,6 +31,8 @@ spec:
         value: https://<<__subdomain_grafana__>>.<<__domain__>>/grafana/
       - name: grafana.grafana\.ini.server.serve_from_sub_path
         value: "true"
+      - name: grafana.grafana\.ini.security.allow_embedding
+        value: "true"
       - name: grafana.plugins[0]
         value: vonage-status-panel
       - name: grafana.sidecar.dashboards.provider.foldersFromFilesStructure
@@ -39,8 +41,6 @@ spec:
         value: k8s-sidecar-target-directory
       - name: grafana.sidecar.dashboards.annotations.k8s-sidecar-target-directory
         value: /tmp/dashboards/Kubernetes
-      - name: grafana.grafana\.ini.security.allow_embedding
-        value: "true"
       - name: prometheus.prometheusSpec.storageSpec.volumeClaimTemplate.spec.storageClassName
         value: standard
       - name: prometheus.prometheusSpec.storageSpec.volumeClaimTemplate.spec.accessModes[0]
