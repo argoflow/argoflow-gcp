@@ -14,8 +14,8 @@ resources:
 - argocd-applications/sealed-secrets.yaml
 
 # Pick *one* of the following two applications
-# - argocd-applications/cert-manager-self-signing.yaml
-- argocd-applications/cert-manager-dns-01.yaml
+# - argocd-applications/cert-manager-dns-01.yaml
+- argocd-applications/cert-manager-self-signing.yaml
 
 # Pick *one* of the following two applications
 # - argocd-applications/oidc-auth-external.yaml
@@ -27,15 +27,15 @@ resources:
 - argocd-applications/kubeflow-namespace.yaml
 - argocd-applications/kubeflow-roles.yaml
 - argocd-applications/pipelines.yaml
+- argocd-applications/pod-defaults.yaml
 - argocd-applications/katib.yaml
 - argocd-applications/kserve.yaml
-- argocd-applications/pod-defaults.yaml
 - argocd-applications/jupyter-web-app.yaml
 - argocd-applications/notebook-controller.yaml
-- argocd-applications/tensorboard-controller.yaml
-- argocd-applications/tensorboards-web-app.yaml
 - argocd-applications/volumes-web-app.yaml
 - argocd-applications/training-operator.yaml
+- argocd-applications/tensorboard-controller.yaml
+- argocd-applications/tensorboards-web-app.yaml
 
 ## Monitoring
 - argocd-applications/jaeger.yaml
@@ -43,7 +43,3 @@ resources:
 - argocd-applications/kube-prometheus-stack.yaml
 - argocd-applications/loki-stack.yaml
 - argocd-applications/monitoring-resources.yaml
-
-## Contrib
-# - argocd-applications/experimental-pvcviewer-controller.yaml
-# - argocd-applications/experimental-volumes-web-app.yaml
