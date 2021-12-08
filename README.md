@@ -25,11 +25,9 @@ Overview of the steps:
 
 * **Optional** (if using `setup_credentials.sh` to generate initial credentials as sealed secrets):
   - [yq](https://github.com/mikefarah/yq)
-  - [kubeseal](https://github.com/bitnami-labs/sealed-secrets/releases/tag/v0.16.0)
-  - Python 3.8+
-  - Python libraries:
-    - bcrypt
-    - passlib
+  - [kubeseal](https://github.com/bitnami-labs/sealed-secrets/releases/tag/v0.17.0)
+  - Python `3.8+`
+  - Python libraries: `pip install bcrypt passlib`
 
 ### Root files
 
