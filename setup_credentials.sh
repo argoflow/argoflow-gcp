@@ -1,5 +1,20 @@
 #!/bin/bash
 
+if [ -z "$email" ]; then
+  echo "Please set the env: email"
+  exit 1
+fi
+
+if [ -z "$username" ]; then
+  echo "Please set the env: username"
+  exit 1
+fi
+
+if [ -z "$password" ]; then
+  echo "Please set the env: password"
+  exit 1
+fi
+
 DISTRIBUTION_PATH="./distribution"
 OAUTH2_PROXY_SECRET=${DISTRIBUTION_PATH}/oidc-auth/overlays/dex/oauth2-proxy-secret.yaml
 DEX_CONFIG_SECRET=${DISTRIBUTION_PATH}/oidc-auth/overlays/dex/dex-config-secret.yaml

@@ -134,6 +134,12 @@ kubectl apply -f distribution/kubeflow.yaml
 After this, you should start seeing applications being deployed in
 the Argo CD UI and what the resources each application create.
 
+### Generate credentials
+
+```bash
+email=test@demo.me username=test password=test ./setup_credentials.sh
+```
+
 ### Updating the deployment
 
 By default, all the Argo CD application specs included here are
