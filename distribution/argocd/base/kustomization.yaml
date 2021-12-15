@@ -4,7 +4,7 @@ namespace: argocd
 
 resources:
 - namespace.yaml
-- https://github.com/argoproj/argo-cd/manifests/ha/cluster-install?ref=a408e299ffa743213df3aa9135bf7945644ec936 # tag=v2.1.7
+- https://github.com/argoproj/argo-cd/manifests/ha/cluster-install?ref=v2.2.0
 
 patchesStrategicMerge:
 - patches/configmap-patch.yaml
