@@ -11,6 +11,7 @@ resources:
 - argocd-applications/knative.yaml
 
 - argocd-applications/certificates.yaml
+- argocd-applications/external-secrets.yaml
 - argocd-applications/sealed-secrets.yaml
 
 # Pick *one* of the following two applications
