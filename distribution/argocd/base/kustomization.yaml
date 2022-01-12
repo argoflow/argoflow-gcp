@@ -21,4 +21,4 @@ images:
   newTag: 6.2.6-alpine
 - name: haproxy
   newName: haproxy
-  newTag: 2.5.0-alpine
+  newTag: 2.5.1-alpine
