@@ -20,10 +20,6 @@ spec:
       - name: cr.spec.api.namespaces.exclude[1]
         value: kube-.*
       - name: cr.spec.api.namespaces.exclude[2]
-        value: openshift.*
-      - name: cr.spec.api.namespaces.exclude[3]
-        value: ibm.*
-      - name: cr.spec.api.namespaces.exclude[4]
         value: kiali-operator
       - name: cr.spec.deployment.ingress_enabled
         value: "false"
