@@ -11,14 +11,16 @@ spec:
     chart: kiali-operator
     helm:
       parameters:
+      - name: fullnameOverride
+        value: kiali
       - name: cr.create
         value: "true"
       - name: cr.namespace
         value: istio-system
       - name: cr.spec.api.namespaces.exclude[0]
-        value: istio-operator
-      - name: cr.spec.api.namespaces.exclude[1]
         value: kube-.*
+      - name: cr.spec.api.namespaces.exclude[1]
+        value: istio-operator
       - name: cr.spec.api.namespaces.exclude[2]
         value: kiali-operator
       - name: cr.spec.deployment.ingress_enabled
