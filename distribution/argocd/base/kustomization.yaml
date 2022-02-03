@@ -8,17 +8,3 @@ resources:
 
 patchesStrategicMerge:
 - patches/configmap-patch.yaml
-
-images:
-- name: quay.io/argoproj/argocd
-  newName: quay.io/argoproj/argocd
-  newTag: v2.2.3
-- name: ghcr.io/dexidp/dex
-  newName: ghcr.io/dexidp/dex
-  newTag: v2.30.3
-- name: redis
-  newName: redis
-  newTag: 6.2.6-alpine
-- name: haproxy
-  newName: haproxy
-  newTag: 2.5.1-alpine
