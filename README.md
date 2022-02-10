@@ -25,7 +25,7 @@ Overview of the steps:
 
 * **Optional** (if using `setup_credentials.sh` to generate initial credentials as sealed secrets):
   - [yq](https://github.com/mikefarah/yq)
-  - [kubeseal](https://github.com/bitnami-labs/sealed-secrets/releases/tag/v0.17.0)
+  - [kubeseal](https://github.com/bitnami-labs/sealed-secrets)
   - Python `3.8+`
   - Python libraries: `pip install bcrypt passlib`
 
@@ -64,14 +64,14 @@ and remove `/ha` from the URI.
   kubectl apply -k distribution/argocd/overlays/private-repo/
   ```
 
-2. Install the Argo CD CLI tool from [here](https://argoproj.github.io/argo-cd/cli_installation/)
+2. Install the Argo CD CLI tool from [here](https://argo-cd.readthedocs.io/en/stable/cli_installation/)
 
 > **Note**: Argo CD needs to be able access your repository
   to deploy applications. If the fork of this repository that
   you are planning to use with Argo CD is private you will
   need to add credentials so it can access the repository.
   Please see the instructions provided by Argo CD
-  [here](https://argoproj.github.io/argo-cd/user-guide/private-repositories/).
+  [here](https://argo-cd.readthedocs.io/en/stable/user-guide/private-repositories/).
 
 ## Installing Kubeflow
 
@@ -184,5 +184,5 @@ and other related setting such as allowing custom images, edit the
     ```
 
 3. You can now login to the Argo CD UI with your new password.
-This UI will be handy to keep track of the created resources
-while deploying Kubeflow.
+   This UI will be handy to keep track of the created resources
+   while deploying Kubeflow.
