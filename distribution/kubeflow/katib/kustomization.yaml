@@ -10,7 +10,7 @@ images:
   newTag: v0.12.0-rc.1
 - name: docker.io/kubeflowkatib/katib-db-manager
   newName: docker.io/kubeflowkatib/katib-db-manager
-  newTag: v0.12.0-rc.1
+  newTag: v0.13.0-rc.1
 - name: docker.io/kubeflowkatib/katib-ui
   newName: docker.io/kubeflowkatib/katib-ui
   newTag: v0.12.0-rc.1
