@@ -24,25 +24,25 @@ patchesStrategicMerge:
 images:
 - name: gcr.io/knative-releases/knative.dev/serving/cmd/activator
   newName: gcr.io/knative-releases/knative.dev/serving/cmd/activator
-  digest: sha256:fc60a809954bf0188345df2c96260dadd857b88cfbaa9a29bb271a36c0b78247
+  digest: sha256:d5b9473ca87a1a406a2bb311bf08f87b1dbe80989e2e654726320f8ed8969142
 - name: gcr.io/knative-releases/knative.dev/serving/cmd/autoscaler
   newName: gcr.io/knative-releases/knative.dev/serving/cmd/autoscaler
-  digest: sha256:2423d477a4fb3b353ecf7f29da6f4ab3a7b77980f743980fcaad5f2d3b008754
+  digest: sha256:5d2c7e12f18c6603ed6a2c8c3be108f25bcec0aae16955301b0cae6ef4a48409
 - name: gcr.io/knative-releases/knative.dev/serving/cmd/domain-mapping
   newName: gcr.io/knative-releases/knative.dev/serving/cmd/domain-mapping
-  digest: sha256:982723d5dd36c7bfa2906be9fbac40e142715871453ddd05e1281723010d3a2d
+  digest: sha256:78e5a4cd7755c2049f57f63c0dabfc8bdbe29d67c9d48f7d8d260ce80068ce95
 - name: gcr.io/knative-releases/knative.dev/serving/cmd/domain-mapping-webhook
   newName: gcr.io/knative-releases/knative.dev/serving/cmd/domain-mapping-webhook
-  digest: sha256:7f1e796278eafee22a396a6f9cd5d4a825d64137efed9a59ecc8a60233d3ef30
+  digest: sha256:189b31528f2a2ad0f41b1ea98cda02eca32733fc399d8b3f861ef4c627cb660c
 - name: gcr.io/knative-releases/knative.dev/serving/cmd/webhook
   newName: gcr.io/knative-releases/knative.dev/serving/cmd/webhook
-  digest: sha256:fcb3de2c64b6c2bad6d74fd35bc7eb48a5986f8f0173834803ad5eec5ca978a9
+  digest: sha256:4827a10949c9458f545bba38e9258cfd4b4169964c374b0d7f377d04b9336daf
 - name: gcr.io/knative-releases/knative.dev/serving/cmd/controller
   newName: gcr.io/knative-releases/knative.dev/serving/cmd/controller
-  digest: sha256:289623ae385437e7b3057029db5d750fb6e06c1c53c9d922292c56bb4404fea7
+  digest: sha256:0ec4cbd8d46af830938eea7e6833e97179abef5af800ff2e96bb4622d1347145
 - name: gcr.io/knative-releases/knative.dev/net-istio/cmd/controller
   newName: gcr.io/knative-releases/knative.dev/net-istio/cmd/controller
-  digest: sha256:81e90255c33f77bf2f0a54efb0038ba473bed50d36e1cf2bf8b20028c72a5bf9
+  digest: sha256:f253b82941c2220181cee80d7488fe1cefce9d49ab30bdb54bcb8c76515f7a26
 - name: gcr.io/knative-releases/knative.dev/net-istio/cmd/webhook
   newName: gcr.io/knative-releases/knative.dev/net-istio/cmd/webhook
-  digest: sha256:67dcddb794126fe0121c76fddf5a2c05d284580fcaba466f323b8d03a9ac6e6f
+  digest: sha256:a705c1ea8e9e556f860314fe055082fbe3cde6a924c29291955f98d979f8185e
