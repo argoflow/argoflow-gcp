@@ -3,8 +3,3 @@ kind: Kustomization
 
 resources:
 - https://github.com/kubeflow/katib/manifests/v1beta1/installs/katib-with-kubeflow?ref=release-0.13
-
-images:
-- name: mysql
-  newName: mysql
-  newTag: "8"
