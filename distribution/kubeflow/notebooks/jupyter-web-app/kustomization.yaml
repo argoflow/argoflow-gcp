@@ -8,8 +8,3 @@ resources:
 patchesStrategicMerge:
 - enable-sidecar.yaml
 - spawner_ui_config.yaml
-
-images:
-- name: public.ecr.aws/j1r0q0g6/notebooks/jupyter-web-app
-  newName: public.ecr.aws/j1r0q0g6/notebooks/jupyter-web-app
-  newTag: v1.4

@@ -3,8 +3,3 @@ kind: Kustomization
 
 resources:
 - github.com/kubeflow/kubeflow/components/tensorboard-controller/config/overlays/kubeflow?ref=1e9535ec06cae3823c33f29fc7890df9d32fcaf9 # tag=v1.4.0
-
-images:
-- name: public.ecr.aws/j1r0q0g6/notebooks/tensorboard-controller
-  newName: public.ecr.aws/j1r0q0g6/notebooks/tensorboard-controller
-  newTag: v1.4

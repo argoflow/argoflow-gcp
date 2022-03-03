@@ -3,8 +3,3 @@ kind: Kustomization
 
 resources:
 - github.com/kubeflow/kubeflow/components/notebook-controller/config/overlays/kubeflow?ref=1e9535ec06cae3823c33f29fc7890df9d32fcaf9 # tag=v1.4.0
-
-images:
-- name: public.ecr.aws/j1r0q0g6/notebooks/notebook-controller
-  newName: public.ecr.aws/j1r0q0g6/notebooks/notebook-controller
-  newTag: v1.4
