@@ -3,7 +3,7 @@ kind: Kustomization
 
 resources:
 - authorization-policy.yaml
-- github.com/kubeflow/kubeflow/components/crud-web-apps/jupyter/manifests/overlays/istio?ref=1e9535ec06cae3823c33f29fc7890df9d32fcaf9 # tag=v1.4.0
+- https://github.com/kubeflow/kubeflow/components/crud-web-apps/jupyter/manifests/overlays/istio?ref=v1.5.0-rc.1
 
 patchesStrategicMerge:
 - enable-sidecar.yaml
