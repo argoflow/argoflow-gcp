@@ -2,48 +2,4 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-- https://github.com/kubeflow/pipelines/manifests/kustomize/env/platform-agnostic-multi-user-emissary?ref=1.7.1
-
-images:
-- name: gcr.io/ml-pipeline/cache-deployer
-  newName: gcr.io/ml-pipeline/cache-deployer
-  newTag: 1.7.1
-- name: gcr.io/ml-pipeline/cache-server
-  newName: gcr.io/ml-pipeline/cache-server
-  newTag: 1.7.1
-- name: gcr.io/ml-pipeline/metadata-envoy
-  newName: gcr.io/ml-pipeline/metadata-envoy
-  newTag: 1.7.1
-- name: gcr.io/tfx-oss-public/ml_metadata_store_server
-  newName: gcr.io/tfx-oss-public/ml_metadata_store_server
-  newTag: 1.2.0
-- name: gcr.io/ml-pipeline/metadata-writer
-  newName: gcr.io/ml-pipeline/metadata-writer
-  newTag: 1.7.1
-- name: gcr.io/ml-pipeline/minio
-  newName: gcr.io/ml-pipeline/minio
-  newTag: RELEASE.2019-08-14T20-37-41Z-license-compliance
-- name: gcr.io/ml-pipeline/api-server
-  newName: gcr.io/ml-pipeline/api-server
-  newTag: 1.7.1
-- name: gcr.io/ml-pipeline/persistenceagent
-  newName: gcr.io/ml-pipeline/persistenceagent
-  newTag: 1.7.1
-- name: gcr.io/ml-pipeline/scheduledworkflow
-  newName: gcr.io/ml-pipeline/scheduledworkflow
-  newTag: 1.7.1
-- name: gcr.io/ml-pipeline/frontend
-  newName: gcr.io/ml-pipeline/frontend
-  newTag: 1.7.1
-- name: gcr.io/ml-pipeline/viewer-crd-controller
-  newName: gcr.io/ml-pipeline/viewer-crd-controller
-  newTag: 1.7.1
-- name: gcr.io/ml-pipeline/visualization-server
-  newName: gcr.io/ml-pipeline/visualization-server
-  newTag: 1.7.1
-- name: gcr.io/ml-pipeline/mysql
-  newName: gcr.io/ml-pipeline/mysql
-  newTag: "5.7"
-- name: gcr.io/ml-pipeline/workflow-controller
-  newName: gcr.io/ml-pipeline/workflow-controller
-  newTag: v3.1.6-patch-license-compliance
+- https://github.com/kubeflow/pipelines/manifests/kustomize/env/platform-agnostic-multi-user-emissary?ref=1.8.1
