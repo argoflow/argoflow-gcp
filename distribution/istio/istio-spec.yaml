@@ -11,7 +11,7 @@ spec:
     accessLogFile: /dev/stdout
     accessLogEncoding: JSON
     enablePrometheusMerge: true
-    enableTracing: true
+    enableTracing: false # TODO
     defaultConfig:
       gatewayTopology:
         numTrustedProxies: 2
