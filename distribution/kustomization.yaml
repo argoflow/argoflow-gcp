@@ -39,7 +39,6 @@ resources:
 - argocd-applications/tensorboards-web-app.yaml
 
 ## Monitoring
-- argocd-applications/jaeger.yaml
 - argocd-applications/kiali.yaml
 - argocd-applications/kube-prometheus-stack.yaml
 - argocd-applications/loki-stack.yaml
