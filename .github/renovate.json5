@@ -38,12 +38,6 @@
       "additionalBranchPrefix": ""
     },
     {
-      "description": "Group KNative",
-      "matchPackagePatterns": ["^gcr.io\/knative.*$"],
-      "groupName": "knative",
-      "additionalBranchPrefix": ""
-    },
-    {
       "description": "Notebook Updates",
       "matchPackagePatterns": ["^ghcr.io\/pluralsh\/kubeflow-notebooks.*"],
       "groupName": "notebooks",

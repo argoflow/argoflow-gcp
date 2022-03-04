@@ -8,7 +8,6 @@ resources:
 - argocd-applications/istio-operator.yaml
 - argocd-applications/istio.yaml
 - argocd-applications/istio-resources.yaml
-- argocd-applications/knative.yaml
 
 - argocd-applications/certificates.yaml
 - argocd-applications/external-secrets.yaml
