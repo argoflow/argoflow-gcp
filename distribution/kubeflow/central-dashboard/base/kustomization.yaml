@@ -3,7 +3,7 @@ kind: Kustomization
 
 resources:
 - authorization-policy.yaml
-- https://github.com/kubeflow/kubeflow/components/centraldashboard/manifests/overlays/istio?ref=v1.5.0-rc.1
+- https://github.com/kubeflow/kubeflow/components/centraldashboard/manifests/overlays/istio?ref=v1.5.0-rc.2
 
 patchesStrategicMerge:
 - enable-registration-flow.yaml
