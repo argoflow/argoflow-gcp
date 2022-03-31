@@ -29,7 +29,6 @@ resources:
 - argocd-applications/pipelines.yaml
 - argocd-applications/pod-defaults.yaml
 - argocd-applications/katib.yaml
-- argocd-applications/kserve.yaml
 - argocd-applications/jupyter-web-app.yaml
 - argocd-applications/notebook-controller.yaml
 - argocd-applications/volumes-web-app.yaml
