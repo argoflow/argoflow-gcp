@@ -175,8 +175,8 @@ and other related setting such as allowing custom images, edit the
 
   ```bash
   kubectl get secret argocd-initial-admin-secret \
-  -n argocd \
-  -o jsonpath="{.data.password}" | base64 -d
+    -n argocd \
+    -o jsonpath="{.data.password}" | base64 -d
   ```
 
   - Next, login with the following command:
