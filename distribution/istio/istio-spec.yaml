@@ -56,44 +56,6 @@ spec:
         service:
           type: LoadBalancer
           externalTrafficPolicy: Local
-    # Cluster-local gateway for KServe
-    - enabled: true
-      name: cluster-local-gateway
-      label:
-        app: cluster-local-gateway
-        istio: cluster-local-gateway
-      k8s:
-        env:
-        - name: ISTIO_META_ROUTER_MODE
-          value: sni-dnat
-        hpaSpec:
-          maxReplicas: 5
-          minReplicas: 1
-          metrics:
-          - type: Resource
-            resource:
-              name: cpu
-              targetAverageUtilization: 80
-          scaleTargetRef:
-            apiVersion: apps/v1
-            kind: Deployment
-            name: cluster-local-gateway
-        resources:
-          limits:
-            cpu: 2000m
-            memory: 1024Mi
-          requests:
-            cpu: 100m
-            memory: 128Mi
-        service:
-          type: ClusterIP
-          ports:
-          - name: status-port
-            port: 15020
-            targetPort: 15020
-          - name: http2
-            port: 80
-            targetPort: 8080
     egressGateways:
     - enabled: false
       name: istio-egressgateway
