@@ -2,42 +2,41 @@
 
 This repository contains Kustomize manifests that point to the upstream
 manifest of each Kubeflow component and provides an easy way for people
-to change their deployment according to their need. Argo CD application
-manifests for each componenet will be used to deploy Kubeflow. The intended
-usage is for people to fork this repository, make their desired kustomizations,
-run a script to change the Argo CD application specs to point to their fork
-of this repository, and finally apply a master Argo CD application that will
-deploy all other applications.
+to change their deployment according to their need.
+Argo CD application manifests for each componenet will be used to
+deploy Kubeflow. The intended usage is for people to fork this
+repository, make their desired kustomizations, run a script to
+change the Argo CD application specs to point to their fork
+of this repository, and finally apply a master Argo CD application
+that will deploy all other applications.
 
-To run the below script [yq](https://github.com/mikefarah/yq) version 4
-must be installed
+To run the below script [yq](https://github.com/mikefarah/yq)
+version 4 must be installed
 
-Overview of the steps:
-
-- Fork this repo
-- Modify the kustomizations for your purpose
-- Run `./setup_repo.py -c ./examples/setup.conf`
-- Commit and push your changes
-- Install Argo CD in your Kubernetes cluster
-- Run `kubectl apply -f distribution/kubeflow.yaml`
+* Overview of the steps:
+  - Fork this repo
+  - Modify the kustomizations for your purpose
+  - Run `./setup_repo.py -c ./examples/setup.conf`
+  - Commit and push your changes
+  - Install Argo CD in your Kubernetes cluster
+  - Run `kubectl apply -f distribution/kubeflow.yaml`
 
 ## Prerequisites
 
-* **Optional** (if using `setup_credentials.sh` to generate initial credentials as sealed secrets):
-  - [yq](https://github.com/mikefarah/yq)
-  - [kubeseal](https://github.com/bitnami-labs/sealed-secrets)
-  - Python `3.8+`
-  - Python libraries: `pip install bcrypt passlib`
+* [yq](https://github.com/mikefarah/yq)
+* [kubeseal](https://github.com/bitnami-labs/sealed-secrets)
+* Python `3.8+`
+* Python libraries: `pip install bcrypt passlib`
 
 ### Root files
 
 * [kustomization.yaml](./distribution/kustomization.yaml):
-  - Kustomization file that references the Argo CD
-    application files in
+  - Kustomization file that references the
+    Argo CD application files in
     [argocd-applications](./distribution/argocd-applications)
 * [kubeflow.yaml](./distribution/kubeflow.yaml):
-  - Argo CD application that deploys the Argo CD
-    applications referenced in
+  - Argo CD application that deploys the
+    Argo CD applications referenced in
     [kustomization.yaml](./distribution/kustomization.yaml)
 
 ## Installing Argo CD
@@ -64,7 +63,8 @@ and remove `/ha` from the URI.
   kubectl apply -k distribution/argocd/overlays/private-repo/
   ```
 
-2. Install the Argo CD CLI tool from [here](https://argo-cd.readthedocs.io/en/stable/cli_installation/)
+2. Install the Argo CD CLI tool from
+   [here](https://argo-cd.readthedocs.io/en/stable/cli_installation/)
 
 > **Note**: Argo CD needs to be able access your repository
   to deploy applications. If the fork of this repository that
@@ -75,27 +75,32 @@ and remove `/ha` from the URI.
 
 ## Installing Kubeflow
 
-The purpose of this repository is to make it easy for people to customize their Kubeflow
-deployment and have it managed through a GitOps tool like Argo CD.
-First, fork this repository and clone your fork locally.
-Next, apply any customization you require in the kustomize folders of the Kubeflow
-applications. Next will follow a set of recommended changes that we encourage everybody
-to make.
+* The purpose of this repository is to make it easy for people
+  to customize their Kubeflow deployment and have it managed
+  through a GitOps tool like Argo CD.
+  - First, fork this repository and clone your fork locally.
+  - Next, apply any customization you require in the kustomize
+    folders of the Kubeflow applications.
+  - Next will follow a set of recommended changes that
+    we encourage everybody to make.
 
 ### Ingress and Certificate
 
-By default the Istio Ingress Gateway is setup to use a LoadBalancer
-and to redirect HTTP traffic to HTTPS.
+By default the Istio Ingress Gateway is setup to use a
+LoadBalancer and to redirect HTTP traffic to HTTPS.
 
-If you do not wish to use a LoadBalancer, change the `spec.type` in [gateway-service.yaml](./distribution/istio/gateway-service.yaml)
+If you do not wish to use a LoadBalancer, change the `spec.type` in
+[gateway-service.yaml](./distribution/istio/gateway-service.yaml)
 to `NodePort`.
 
-To provide HTTPS out-of-the-box, the `kubeflow-self-signing-issuer` used by internal
-Kubeflow applications is setup to provide a certificate for the Istio Ingress
-Gateway.
+To provide HTTPS out-of-the-box, the `kubeflow-self-signing-issuer`
+used by internal Kubeflow applications is setup to provide a
+certificate for the Istio Ingress Gateway.
 
-To use a different certificate for the Ingress Gateway, change
-the `spec.issuerRef.name` to the cert-manager ClusterIssuer you would like to use in [ingress-certificate.yaml](./distribution/istio/ingress-certificate.yaml)
+To use a different certificate for the Ingress Gateway,
+change the `spec.issuerRef.name` to the cert-manager
+ClusterIssuer you would like to use in
+[ingress-certificate.yaml](./distribution/istio/ingress-certificate.yaml)
 and set the `spec.commonName` and `spec.dnsNames[0]` to your Kubeflow domain.
 
 If you would like to use LetsEncrypt, a ClusterIssuer template if provided in
@@ -112,9 +117,10 @@ all the Argo CD application specs.
 ./setup_repo.py -c ./examples/setup.conf
 ```
 
-To change what Kubeflow or third-party componenets are included in the deployment,
-edit the [root kustomization.yaml](./distribution/kustomization.yaml) and
-comment or uncomment the components you do or don't want.
+To change what Kubeflow or third-party componenets are
+included in the deployment, edit the
+[root kustomization.yaml](./distribution/kustomization.yaml)
+and comment or uncomment the components you do or don't want.
 
 Next, commit your changes and push them to your repository.
 
