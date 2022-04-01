@@ -9,7 +9,6 @@ spec:
   servers:
   - hosts:
     - <<__subdomain_dashboard__>>.<<__domain__>>
-    - <<__subdomain_serving__>>.<<__domain__>>
     port:
       name: http
       number: 80
@@ -18,7 +17,6 @@ spec:
       httpsRedirect: true
   - hosts:
     - <<__subdomain_dashboard__>>.<<__domain__>>
-    - <<__subdomain_serving__>>.<<__domain__>>
     port:
       name: https
       number: 443
