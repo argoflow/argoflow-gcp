@@ -4,3 +4,12 @@ kind: Kustomization
 resources:
 - https://github.com/jetstack/cert-manager/releases/download/v1.8.0/cert-manager.yaml
 - cluster-issuers.yaml
+
+patches:
+- patch: |-
+    - op: add
+      path: /spec/template/spec/containers/0/args/-
+      value: --cluster-issuer-ambient-credentials=true
+  target:
+    kind: Deployment
+    name: cert-manager
