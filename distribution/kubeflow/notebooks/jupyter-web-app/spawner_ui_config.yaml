@@ -21,26 +21,25 @@ data:
     # Note that some values can be templated. Such values are the names of the
     # Volumes as well as their StorageClass
     spawnerFormDefaults:
-    # container image source available at https://github.com/pluralsh/kubeflow-notebooks
       image:
         # The container Image for the user's Jupyter Notebook
-        value: ghcr.io/pluralsh/kubeflow-notebooks-jupyter-scipy:v1.0.0
+        value: ghcr.io/pluralsh/kubeflow-notebooks-jupyter-scipy:v1.0.64
         # The list of available standard container Images
         options:
-          - ghcr.io/pluralsh/kubeflow-notebooks-jupyter-scipy:v1.0.0
-          - ghcr.io/pluralsh/kubeflow-notebooks-jupyter-pytorch-full:v1.0.0
-          - ghcr.io/pluralsh/kubeflow-notebooks-jupyter-pytorch-full-cuda:v1.0.0
-          - ghcr.io/pluralsh/kubeflow-notebooks-jupyter-tensorflow-full:v1.0.0
-          - ghcr.io/pluralsh/kubeflow-notebooks-jupyter-tensorflow-full-cuda:v1.0.0
+          - ghcr.io/pluralsh/kubeflow-notebooks-jupyter-scipy:v1.0.64
+          - ghcr.io/pluralsh/kubeflow-notebooks-jupyter-pytorch-full:v1.0.62
+          - ghcr.io/pluralsh/kubeflow-notebooks-jupyter-pytorch-full-cuda:v1.0.62
+          - ghcr.io/pluralsh/kubeflow-notebooks-jupyter-tensorflow-full:v1.0.22
+          - ghcr.io/pluralsh/kubeflow-notebooks-jupyter-tensorflow-full-cuda:v1.0.22
       imageGroupOne:
         # The container Image for the user's Group One Server
         # The annotation `notebooks.kubeflow.org/http-rewrite-uri: /`
         # is applied to notebook in this group, configuring
         # the Istio rewrite for containers that host their web UI at `/`
-        value: ghcr.io/pluralsh/kubeflow-notebooks-codeserver-python:v1.0.0
+        value: ghcr.io/pluralsh/kubeflow-notebooks-codeserver-python:v1.0.12
         # The list of available standard container Images
         options:
-          - ghcr.io/pluralsh/kubeflow-notebooks-codeserver-python:v1.0.0
+          - ghcr.io/pluralsh/kubeflow-notebooks-codeserver-python:v1.0.12
       imageGroupTwo:
         # The container Image for the user's Group Two Server
         # The annotation `notebooks.kubeflow.org/http-rewrite-uri: /`
@@ -49,10 +48,10 @@ data:
         # The annotation `notebooks.kubeflow.org/http-headers-request-set`
         # is applied to notebook in this group, configuring Istio
         # to add the `X-RStudio-Root-Path` header to requests
-        value: ghcr.io/pluralsh/kubeflow-notebooks-rstudio-tidyverse:v1.0.0
+        value: ghcr.io/pluralsh/kubeflow-notebooks-rstudio-tidyverse:v1.0.3
         # The list of available standard container Images
         options:
-          - ghcr.io/pluralsh/kubeflow-notebooks-rstudio-tidyverse:v1.0.0
+          - ghcr.io/pluralsh/kubeflow-notebooks-rstudio-tidyverse:v1.0.3
       allowCustomImage: true
       # If true, users can input custom images
       # If false, users can only select from the images in this config
