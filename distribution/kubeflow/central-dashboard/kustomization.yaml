@@ -5,4 +5,5 @@ resources:
 - https://github.com/kubeflow/kubeflow/components/centraldashboard/manifests/overlays/istio?ref=v1.5.0
 
 patchesStrategicMerge:
+- configmap.yaml
 - enable-registration-flow.yaml

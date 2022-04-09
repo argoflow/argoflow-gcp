@@ -32,8 +32,6 @@ data:
           - ghcr.io/pluralsh/kubeflow-notebooks-jupyter-pytorch-full-cuda:v1.0.0
           - ghcr.io/pluralsh/kubeflow-notebooks-jupyter-tensorflow-full:v1.0.0
           - ghcr.io/pluralsh/kubeflow-notebooks-jupyter-tensorflow-full-cuda:v1.0.0
-          - ghcr.io/pluralsh/kubeflow-notebooks-jupyter-go:v1.0.0
-          - ghcr.io/pluralsh/kubeflow-notebooks-jupyter-elixir:v1.0.0
       imageGroupOne:
         # The container Image for the user's Group One Server
         # The annotation `notebooks.kubeflow.org/http-rewrite-uri: /`
