@@ -2,4 +2,4 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-- https://github.com/kubeflow/pipelines/manifests/kustomize/env/platform-agnostic-multi-user-emissary?ref=1.8.4
+- https://github.com/kubeflow/pipelines/manifests/kustomize/env/platform-agnostic-multi-user-emissary?ref=2.0.0-alpha.4
