@@ -11,6 +11,6 @@ spec:
   http:
   - route:
     - destination:
-        host: kube-prometheus-stack-grafana.monitoring.svc.cluster.local
-        port:
-          number: 80
+        host: loki-stack.monitoring.svc.cluster.local
+        port: # TODO - Fix this if we get Grafana
+          number: 3100
