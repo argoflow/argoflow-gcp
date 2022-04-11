@@ -10,7 +10,6 @@ spec:
   meshConfig:
     accessLogFile: /dev/stdout
     accessLogEncoding: JSON
-    enablePrometheusMerge: false
     enableTracing: false # TODO
     defaultConfig:
       gatewayTopology:
