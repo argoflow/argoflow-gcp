@@ -31,42 +31,8 @@ spec:
         value: \"false\"
       - name: cr.spec.istio_namespace
         value: istio-system
-      - name: cr.spec.external_services.prometheus.url
-        value: http://kube-prometheus-stack-prometheus.monitoring:9090
-      - name: cr.spec.external_services.tracing.use_grpc
+      - name: cr.spec.external_services.tracing.enabled
         value: "false"
-      - name: cr.spec.external_services.tracing.in_cluster_url
-        value: http://jaeger-query.istio-system
-      - name: cr.spec.external_services.grafana.auth.type
-        value: basic
-      - name: cr.spec.external_services.grafana.auth.password
-        value: secret:kube-prometheus-stack-grafana:admin-password
-      - name: cr.spec.external_services.grafana.auth.username
-        value: admin
-      - name: cr.spec.external_services.grafana.url
-        value: https://<<__subdomain_grafana__>>.<<__domain__>>/grafana
-      - name: cr.spec.external_services.grafana.in_cluster_url
-        value: http://kube-prometheus-stack-grafana.monitoring:80/grafana
-      - name: cr.spec.external_services.grafana.dashboards[0].name
-        value: Istio Service Dashboard
-      - name: cr.spec.external_services.grafana.dashboards[0].variables.namespace
-        value: var-namespace
-      - name: cr.spec.external_services.grafana.dashboards[0].variables.service
-        value: var-service
-      - name: cr.spec.external_services.grafana.dashboards[1].name
-        value: Istio Workload Dashboard
-      - name: cr.spec.external_services.grafana.dashboards[1].variables.namespace
-        value: var-namespace
-      - name: cr.spec.external_services.grafana.dashboards[1].variables.service
-        value: var-service
-      - name: cr.spec.external_services.grafana.dashboards[2].name
-        value: Kubernetes / API server
-      - name: cr.spec.external_services.grafana.dashboards[2].variables.var-datasource
-        value: default
-      - name: cr.spec.external_services.grafana.dashboards[2].variables.var-cluster
-        value: ""
-      - name: cr.spec.external_services.grafana.dashboards[2].variables.var-instance
-        value: All
   destination:
     server: https://kubernetes.default.svc
     namespace: kiali-operator
