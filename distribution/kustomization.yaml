@@ -38,7 +38,5 @@ resources:
 
 ## Monitoring
 - argocd-applications/kiali.yaml
-- argocd-applications/kube-prometheus-stack-crds.yaml
-- argocd-applications/kube-prometheus-stack-skip-crds.yaml
 - argocd-applications/loki-stack.yaml
 - argocd-applications/monitoring-resources.yaml
