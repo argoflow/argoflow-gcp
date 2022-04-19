@@ -7,14 +7,14 @@ spec:
   project: default
   source:
     repoURL: https://github.com/istio/istio
-    targetRevision: 1.13.2
+    targetRevision: 1.13.3
     path: manifests/charts/istio-operator
     helm:
       parameters:
       - name: hub
         value: docker.io/istio
       - name: tag
-        value: 1.13.2
+        value: 1.13.3
   destination:
     server: https://kubernetes.default.svc
     namespace: istio-operator
