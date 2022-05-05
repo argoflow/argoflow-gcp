@@ -23,7 +23,7 @@ data:
     spawnerFormDefaults:
       image:
         # The container Image for the user's Jupyter Notebook
-        value: ghcr.io/pluralsh/kubeflow-notebooks-jupyter-scipy:v1.0.64
+        value: ghcr.io/haoxins/jupyter:main
         # The list of available standard container Images
         options:
           - ghcr.io/haoxins/jupyter:main
@@ -37,19 +37,17 @@ data:
         # The annotation `notebooks.kubeflow.org/http-rewrite-uri: /`
         # is applied to notebook in this group, configuring
         # the Istio rewrite for containers that host their web UI at `/`
-        value: ghcr.io/haoxins/jupyter:main
+        value: ""
         # The list of available standard container Images
         options:
-          - ghcr.io/haoxins/jupyter:main
       imageGroupTwo:
         # The container Image for the user's Group Two Server
         # The annotation `notebooks.kubeflow.org/http-rewrite-uri: /`
         # is applied to notebook in this group, configuring
         # the Istio rewrite for containers that host their web UI at `/`
-        value: ghcr.io/haoxins/jupyter:main
+        value: ""
         # The list of available standard container Images
         options:
-          - ghcr.io/haoxins/jupyter:main
       allowCustomImage: true
       # If true, users can input custom images
       # If false, users can only select from the images in this config
