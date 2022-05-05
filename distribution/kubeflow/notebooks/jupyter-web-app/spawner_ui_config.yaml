@@ -26,6 +26,7 @@ data:
         value: ghcr.io/pluralsh/kubeflow-notebooks-jupyter-scipy:v1.0.64
         # The list of available standard container Images
         options:
+          - ghcr.io/haoxins/jupyter:main
           - ghcr.io/pluralsh/kubeflow-notebooks-jupyter-scipy:v1.0.64
           - ghcr.io/pluralsh/kubeflow-notebooks-jupyter-pytorch-full:v1.0.62
           - ghcr.io/pluralsh/kubeflow-notebooks-jupyter-pytorch-full-cuda:v1.0.62
