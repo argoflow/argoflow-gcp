@@ -23,10 +23,10 @@ data:
     spawnerFormDefaults:
       image:
         # The container Image for the user's Jupyter Notebook
-        value: ghcr.io/haoxins/jupyter:main
+        value: ghcr.io/haoxins/jupyter-scipy:0.2.1
         # The list of available standard container Images
         options:
-          - ghcr.io/haoxins/jupyter:main
+          - ghcr.io/haoxins/jupyter-scipy:0.2.1
           - ghcr.io/pluralsh/kubeflow-notebooks-jupyter-scipy:v1.0.64
           - ghcr.io/pluralsh/kubeflow-notebooks-jupyter-pytorch-full:v1.0.62
           - ghcr.io/pluralsh/kubeflow-notebooks-jupyter-pytorch-full-cuda:v1.0.62
