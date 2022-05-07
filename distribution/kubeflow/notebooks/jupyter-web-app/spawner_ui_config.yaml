@@ -38,18 +38,16 @@ data:
         readOnly: false
       workspaceVolume:
         value:
-          type:
-            value: New
-          name:
-            value: 'workspace-{notebook-name}'
-          size:
-            value: '5Gi'
-          mountPath:
-            value: /home/jovyan
-          accessModes:
-            value: ReadWriteOnce
-          class:
-            value: '{none}'
+          mount: /home/jovyan
+          newPvc:
+            metadata:
+              name: "{notebook-name}-workspace"
+            spec:
+              resources:
+                requests:
+                  storage: 5Gi
+              accessModes:
+                - ReadWriteOnce
         readOnly: false
       dataVolumes:
         value: []
@@ -76,4 +74,4 @@ data:
         readOnly: false
       configurations:
         value: []
-    readOnly: false
+        readOnly: false
