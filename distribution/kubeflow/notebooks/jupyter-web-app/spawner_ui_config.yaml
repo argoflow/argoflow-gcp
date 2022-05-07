@@ -3,6 +3,7 @@ kind: ConfigMap
 metadata:
   name: config
 data:
+  # https://github.com/kubeflow/kubeflow/blob/master/components/crud-web-apps/jupyter/backend/apps/common/yaml/spawner_ui_config.yaml
   spawner_ui_config.yaml: |
     spawnerFormDefaults:
       image:
@@ -52,39 +53,6 @@ data:
         readOnly: false
       dataVolumes:
         value: []
-        # Each Data Volume is declared with the following attributes:
-        # Type, Name, Size, MountPath and Access Mode
-        #
-        # For example, a list with 2 Data Volumes:
-        # value:
-        #   - value:
-        #       type:
-        #         value: New
-        #       name:
-        #         value: '{notebook-name}-vol-1'
-        #       size:
-        #         value: '10Gi'
-        #       class:
-        #         value: standard
-        #       mountPath:
-        #         value: /home/jovyan/vol-1
-        #       accessModes:
-        #         value: ReadWriteOnce
-        #       class:
-        #         value: {none}
-        #   - value:
-        #       type:
-        #         value: New
-        #       name:
-        #         value: '{notebook-name}-vol-2'
-        #       size:
-        #         value: '10Gi'
-        #       mountPath:
-        #         value: /home/jovyan/vol-2
-        #       accessModes:
-        #         value: ReadWriteMany
-        #       class:
-        #         value: {none}
         readOnly: false
       gpus:
         value:
@@ -99,44 +67,9 @@ data:
       affinityConfig:
         value: ""
         options: []
-        #options:
-        #  - configKey: "exclusive__n1-standard-2"
-        #    displayName: "Exclusive: n1-standard-2"
-        #    affinity:
-        #      # (Require) Node having label: `node_pool=notebook-n1-standard-2`
-        #      nodeAffinity:
-        #        requiredDuringSchedulingIgnoredDuringExecution:
-        #          nodeSelectorTerms:
-        #            - matchExpressions:
-        #                - key: "node_pool"
-        #                  operator: "In"
-        #                  values:
-        #                   - "notebook-n1-standard-2"
-        #      # (Require) Node WITHOUT existing Pod having label: `notebook-name`
-        #      podAntiAffinity:
-        #        requiredDuringSchedulingIgnoredDuringExecution:
-        #          - labelSelector:
-        #              matchExpressions:
-        #                - key: "notebook-name"
-        #                  operator: "Exists"
-        #            namespaces: []
-        #            topologyKey: "kubernetes.io/hostname"
-        #readOnly: false
       tolerationGroup:
         value: ""
         options: []
-        #options:
-        #  - groupKey: "group_1"
-        #    displayName: "Group 1: description"
-        #    tolerations:
-        #      - key: "key1"
-        #        operator: "Equal"
-        #        value: "value1"
-        #        effect: "NoSchedule"
-        #      - key: "key2"
-        #        operator: "Equal"
-        #        value: "value2"
-        #        effect: "NoSchedule"
         readOnly: false
       shm:
         value: true
