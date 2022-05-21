@@ -7,14 +7,11 @@ data:
   spawner_ui_config.yaml: |
     spawnerFormDefaults:
       image:
-        value: ghcr.io/haoxins/jupyter-scipy:0.2.1
+        value: ghcr.io/haoxins/jupyter-scipy:0.3.3
         options:
-          - ghcr.io/haoxins/jupyter-scipy:0.2.1
-          - ghcr.io/pluralsh/kubeflow-notebooks-jupyter-scipy:v1.0.64
-          - ghcr.io/pluralsh/kubeflow-notebooks-jupyter-pytorch-full:v1.0.62
-          - ghcr.io/pluralsh/kubeflow-notebooks-jupyter-pytorch-full-cuda:v1.0.62
-          - ghcr.io/pluralsh/kubeflow-notebooks-jupyter-tensorflow-full:v1.0.22
-          - ghcr.io/pluralsh/kubeflow-notebooks-jupyter-tensorflow-full-cuda:v1.0.22
+          - ghcr.io/haoxins/jupyter-scipy:0.3.3
+          - ghcr.io/haoxins/jupyter-pytorch:0.3.3
+          - ghcr.io/haoxins/jupyter-tensorflow:0.3.3
       imageGroupOne:
         value: ""
         options:
