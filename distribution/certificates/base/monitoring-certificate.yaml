@@ -10,4 +10,3 @@ spec:
     kind: ClusterIssuer
   dnsNames:
   - <<__subdomain_grafana__>>.<<__domain__>>
-  - <<__subdomain_kiali__>>.<<__domain__>>
