@@ -7,11 +7,11 @@ data:
   spawner_ui_config.yaml: |
     spawnerFormDefaults:
       image:
-        value: ghcr.io/haoxins/jupyter-scipy:0.3.3
+        value: ghcr.io/haoxins/jupyter-scipy:0.3.4
         options:
-          - ghcr.io/haoxins/jupyter-scipy:0.3.3
-          - ghcr.io/haoxins/jupyter-pytorch:0.3.3
-          - ghcr.io/haoxins/jupyter-tensorflow:0.3.3
+          - ghcr.io/haoxins/jupyter-scipy:0.3.4
+          - ghcr.io/haoxins/jupyter-pytorch:0.3.4
+          - ghcr.io/haoxins/jupyter-pytorch-cuda:0.3.4
       imageGroupOne:
         value: ""
         options:
