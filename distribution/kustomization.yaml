@@ -33,8 +33,8 @@ resources:
 - argocd-applications/notebook-controller.yaml
 - argocd-applications/volumes-web-app.yaml
 - argocd-applications/training-operator.yaml
-- argocd-applications/tensorboard-controller.yaml
-- argocd-applications/tensorboards-web-app.yaml
+# - argocd-applications/tensorboard-controller.yaml
+# - argocd-applications/tensorboards-web-app.yaml
 
 ## Monitoring
 - argocd-applications/kiali.yaml

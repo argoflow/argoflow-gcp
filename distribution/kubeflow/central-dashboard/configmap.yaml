@@ -18,12 +18,6 @@ data:
         },
         {
           "type": "item",
-          "link": "/tensorboards/",
-          "text": "Tensorboards",
-          "icon": "assessment"
-        },
-        {
-          "type": "item",
           "link": "/volumes/",
           "text": "Volumes",
           "icon": "device:storage"
