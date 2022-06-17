@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/istio/istio
-    targetRevision: 1.13.5
+    targetRevision: 1.14.1
     path: manifests/charts/istio-operator
     helm:
       parameters:
