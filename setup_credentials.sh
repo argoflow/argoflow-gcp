@@ -16,9 +16,9 @@ if [ -z "$password" ]; then
 fi
 
 DISTRIBUTION_PATH="./distribution"
-OAUTH2_PROXY_SECRET=${DISTRIBUTION_PATH}/oidc-auth/overlays/dex/oauth2-proxy-secret.yaml
-DEX_CONFIG_SECRET=${DISTRIBUTION_PATH}/oidc-auth/overlays/dex/dex-config-secret.yaml
-DEX_CONFIG_TEMPLATE=${DISTRIBUTION_PATH}/oidc-auth/overlays/dex/dex-config-template.yaml
+OAUTH2_PROXY_SECRET=${DISTRIBUTION_PATH}/oidc-auth/oauth2-proxy-secret.yaml
+DEX_CONFIG_SECRET=${DISTRIBUTION_PATH}/oidc-auth/dex-config-secret.yaml
+DEX_CONFIG_TEMPLATE=${DISTRIBUTION_PATH}/oidc-auth/dex-config-template.yaml
 
 COOKIE_SECRET=$(python3 -c 'import os, base64; print(base64.urlsafe_b64encode(os.urandom(16)).decode())')
 OIDC_CLIENT_ID=$(python3 -c 'import secrets; print(secrets.token_hex(16))')
