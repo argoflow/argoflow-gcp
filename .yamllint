@@ -4,8 +4,8 @@ rules:
     max: 160
     level: warning
     ignore: |
-      /distribution/oidc-auth/overlays/dex/dex-config-secret.yaml
-      /distribution/oidc-auth/overlays/dex/oauth2-proxy-secret.yaml
+      /distribution/oidc-auth/dex-config-secret.yaml
+      /distribution/oidc-auth/oauth2-proxy-secret.yaml
   indentation:
     spaces: 2
     indent-sequences: false

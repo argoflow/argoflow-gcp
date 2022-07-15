@@ -33,26 +33,40 @@ spec:
         value: 168h
       - name: extraArgs.cookie-name
         value: _oauth2_proxy
+      - name: extraArgs.cookie-domain
+        value: .<<__domain__>>
       - name: extraArgs.email-domain
         value: "*"
       - name: extraArgs.upstream
         value: static://200
       - name: extraArgs.skip-provider-button
         value: "true"
-      - name: extraArgs.cookie-domain
-        value: .<<__domain__>>
+      - name: extraArgs.skip-oidc-discovery
+        value: "true"
+      - name: extraArgs.ssl-insecure-skip-verify
+        value: "true"
       - name: extraArgs.whitelist-domain
         value: .<<__domain__>>
       - name: extraArgs.oidc-issuer-url
         value: https://<<__subdomain_auth__>>.<<__domain__>>
+      - name: extraArgs.scope
+        value: <<__oidc.scope__>>
+      - name: extraArgs.user-id-claim
+        value: <<__oidc.user_id_claim__>>
       - name: extraArgs.login-url
         value: https://<<__subdomain_auth__>>.<<__domain__>>/auth
       - name: extraArgs.oidc-jwks-url
         value: https://<<__subdomain_auth__>>.<<__domain__>>/keys
       - name: extraArgs.redeem-url
         value: https://<<__subdomain_auth__>>.<<__domain__>>/token
-      - name: extraArgs.skip-oidc-discovery
-        value: "true"
-      # TODO: This should be configurable
-      - name: extraArgs.ssl-insecure-skip-verify
-        value: "true"
+    repoURL: https://oauth2-proxy.github.io/manifests
+    targetRevision: 6.2.2
+  destination:
+    namespace: auth
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true

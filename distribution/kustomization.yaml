@@ -17,9 +17,10 @@ resources:
 # - argocd-applications/cert-manager-dns-01.yaml
 - argocd-applications/cert-manager-self-signing.yaml
 
-# Pick *one* of the following two applications
-# - argocd-applications/oidc-auth-external.yaml
-- argocd-applications/oidc-auth-on-cluster-dex.yaml
+## Auth
+- argocd-applications/dex.yaml
+- argocd-applications/oauth2-proxy.yaml
+- argocd-applications/oidc-auth.yaml
 
 ## Kubeflow
 - argocd-applications/central-dashboard.yaml

@@ -4,7 +4,8 @@ kind: Kustomization
 resources:
 - auth-authorizationpolicy.yaml
 - auth-gateway.yaml
+- auth-virtual-service.yaml
+- dex-config-secret.yaml
 - namespace.yaml
 - oauth2-proxy-secret.yaml
 - oauth2-proxy-signout-virtual-service.yaml
-- oauth2-proxy.yaml
