@@ -45,18 +45,7 @@
       "requiredStatusChecks": null,
       "additionalBranchPrefix": ""
     },
-    //{
-    //  "matchDatasources": [
-    //    "github-releases",
-    //    "github-tags"
-    //  ],
-    //  "pinDigests": true,
-    //  "digest": {
-    //    "enabled": true,
-    //    "automerge": false
-    //},
-    //},
-    { // major updates do not create PRs automatically
+    {
       "updateTypes": ["major"],
       "dependencyDashboardApproval": true,
     }
@@ -65,13 +54,11 @@
   "kustomize": {
     "enabled": true,
   },
-  // Enable scanning of Kubernetes YAML
   "kubernetes": {
     "fileMatch": ["\\.yaml$"]
   },
-  // Update Argo CD application specs
   "argocd": {
-      "fileMatch": ["(argocd-applications|oidc-auth)/.+\\.yaml$"]
+      "fileMatch": ["argocd-applications/.+\\.yaml$"]
   },
   "regexManagers": [
     {
@@ -88,19 +75,10 @@
         ],
       "datasourceTemplate": "github-tags"
     },
-    // Update Istio CR and operator
     {
       "fileMatch": ["(^|/)istio-(spec|operator).yaml$"],
       "matchStrings": [
           "(tag:|value:) (?<currentValue>.*) # (?<depName>.*)"
-        ],
-      "datasourceTemplate": "docker"
-    },
-    // Update Jupyter Spawner Images
-    {
-      "fileMatch": ["(^|/)spawner_ui_config.yaml$"],
-      "matchStrings": [
-          "(value:|-) (?<depName>kubeflownotebooks\/[^\/]*?)\:(?<currentValue>.*)"
         ],
       "datasourceTemplate": "docker"
     }
