@@ -49,18 +49,8 @@ and remove `/ha` from the URI.
 
 1. Next, to install Argo CD execute the following command:
 
-- If you are using a public repo, or you want to
-  configure credentials using Argo CD UI later:
-
   ```bash
   kubectl apply -k distribution/argocd/base/
-  ```
-
-- If you are using a private repo and want to
-  set up credentials declaratively:
-
-  ```bash
-  kubectl apply -k distribution/argocd/overlays/private-repo/
   ```
 
 2. Install the Argo CD CLI tool from
