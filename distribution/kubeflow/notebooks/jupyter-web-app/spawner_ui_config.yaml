@@ -18,6 +18,8 @@ data:
       imageGroupTwo:
         value: ""
         options:
+      hideRegistry: true
+      hideTag: false
       allowCustomImage: true
       imagePullPolicy:
         value: IfNotPresent
