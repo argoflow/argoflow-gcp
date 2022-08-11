@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: spark-operator
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/GoogleCloudPlatform/spark-on-k8s-operator
+    targetRevision: spark-operator-chart-1.1.25
+    path: charts/spark-operator-chart
+    helm:
+      parameters:
+      - name: image.repository
+        value: ghcr.io/googlecloudplatform/spark-operator
+      - name: image.tag
+        value: v1beta2-1.3.7-3.1.1
+      - name: sparkJobNamespace
+        value: ""
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: spark-operator
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
