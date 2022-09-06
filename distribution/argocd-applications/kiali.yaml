@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://kiali.org/helm-charts
-    targetRevision: 1.55.1
+    targetRevision: 1.56.0
     chart: kiali-operator
     helm:
       parameters:
