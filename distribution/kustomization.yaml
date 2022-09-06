@@ -37,6 +37,9 @@ resources:
 # - argocd-applications/tensorboard-controller.yaml
 # - argocd-applications/tensorboards-web-app.yaml
 
+## Ray
+- argocd-applications/ray-operator.yaml
+
 ## Monitoring
 - argocd-applications/kiali.yaml
 - argocd-applications/loki-stack.yaml
