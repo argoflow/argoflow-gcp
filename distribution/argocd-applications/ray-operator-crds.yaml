@@ -1,17 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ray-operator
+  name: ray-operator-crds
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/ray-project/kuberay
     targetRevision: v0.3.0
-    path: helm-chart/kuberay-operator
-    helm:
-      skipCrds: true
-      parameters:
+    path: helm-chart/kuberay-operator/crds
   destination:
     server: https://kubernetes.default.svc
     namespace: ray-operator
@@ -20,4 +17,4 @@ spec:
       prune: true
       selfHeal: true
     syncOptions:
-    - CreateNamespace=true
+    - Replace=true

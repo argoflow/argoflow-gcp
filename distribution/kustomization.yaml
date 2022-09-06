@@ -38,6 +38,7 @@ resources:
 # - argocd-applications/tensorboards-web-app.yaml
 
 ## Ray
+- argocd-applications/ray-operator-crds.yaml
 - argocd-applications/ray-operator.yaml
 
 ## Monitoring
