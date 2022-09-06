@@ -29,11 +29,11 @@ resources:
 - argocd-applications/kubeflow-roles.yaml
 - argocd-applications/pipelines.yaml
 - argocd-applications/pod-defaults.yaml
-- argocd-applications/katib.yaml
+# - argocd-applications/katib.yaml
 - argocd-applications/jupyter-web-app.yaml
 - argocd-applications/notebook-controller.yaml
 - argocd-applications/volumes-web-app.yaml
-- argocd-applications/training-operator.yaml
+# - argocd-applications/training-operator.yaml
 # - argocd-applications/tensorboard-controller.yaml
 # - argocd-applications/tensorboards-web-app.yaml
 
