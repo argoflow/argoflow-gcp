@@ -60,7 +60,7 @@ spec:
       - name: extraArgs.redeem-url
         value: https://<<__subdomain_auth__>>.<<__domain__>>/token
     repoURL: https://oauth2-proxy.github.io/manifests
-    targetRevision: 6.2.7
+    targetRevision: 6.15.1
   destination:
     namespace: auth
     server: https://kubernetes.default.svc
