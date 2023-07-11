@@ -1,4 +1,21 @@
-# Deploying Kubeflow with Argo CD
+# Argoflow-GCP
+
+<br>
+
+> ## ⚠️ Argoflow-GCP has been superseded by [deployKF](https://github.com/deployKF/deployKF) ⚠️
+> 
+> deployKF makes it easy to build reliable ML Platforms on Kubernetes and supports more than just Kubeflow!
+>
+> deployKF supports all Kubernetes distributions and has native integrations with GCP.
+> 
+>  - [deploykf.org](https://www.deploykf.org/)
+>  - [github.com/deployKF/deployKF](https://github.com/deployKF/deployKF)
+
+<br>
+
+---
+
+## Original README
 
 This repository contains Kustomize manifests that point to the upstream
 manifest of each Kubeflow component and provides an easy way for people
